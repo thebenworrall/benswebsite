@@ -1,0 +1,22 @@
+{
+  "name": "nextjs-course",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^2.5.5",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
+    "contentful": "^10.2.0",
+    "framer-motion": "^10.12.0",
+    "next": "^12.3.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-social-icons": "^5.15.0"
+  }
+}

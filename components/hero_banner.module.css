@@ -1,0 +1,85 @@
+.container {
+  position: relative;
+  
+}
+
+.box {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  width: 40rem;
+  max-width: 60%;
+  height: 30rem;
+  font-size: 30px;
+  background-color: rgb(31, 29, 29);
+  opacity: 90%;
+  color: white;
+  border-radius: 10px;
+}
+
+
+.p {
+  color: white;
+  margin: 30px;
+  font-size: large;
+}
+
+      
+
+.h1 {
+        font-weight: 200;
+        color: rgb(222, 211, 211);
+        margin-left: 50px;
+        margin-top: 10px;
+      }
+
+      .h2 {
+        margin-top: 50px;
+        margin-left: 50px;
+        font-size: 30pt;
+      }
+
+      .h4 {
+        font-size: medium;
+        margin-left: 50px
+      }
+
+      .form {
+        font-size: medium;
+        color: grey;
+        margin-left: 50px;
+        margin-top: 30px;
+        display: flex;
+      
+      }
+
+      .button {
+        background-color:  rgb(158, 64, 64);
+        color: rgb(238, 238, 241);
+        font-size: medium;
+        padding: 10px;
+        margin-left: 50px;
+      }
+
+
+       @media screen and ( max-width: 800px ) {
+
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            
+        }
+  
+          .box {
+            width: 50%;
+            max-width: 90%;
+            height: auto;
+            font-size: 15px;
+              
+          }
+   
+     }
+
+  

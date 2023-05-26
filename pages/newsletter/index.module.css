@@ -1,0 +1,20 @@
+.container {
+    padding-top: 80px;
+}
+
+.posts_container {
+    color: black;
+}
+
+.h1 {
+    font-size: x-large;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.p {
+    margin-top: 10px;
+    margin-left: 15px;
+}
