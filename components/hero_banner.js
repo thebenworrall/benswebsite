@@ -41,7 +41,7 @@ return (
     <Flex className={classes.container}>
         <Image src='/images/ben_photography.jpg' alt='Ben Banner' width="100%" height="auto" />
         <Box className={classes.box}>
-        <h2 className={classes.h2}> BEN WORRALL </h2>
+        <h2 className={classes.h2}> RETNA </h2>
         <h4 className={classes.h4}> Learning about life. Sharing what I discover. </h4>
         <h1 className={classes.h1}> I share insights on philosophy, psychology, creativity & more. </h1>
         <h1 className={classes.h1}> New articles are released every Sunday.  </h1>
