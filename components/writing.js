@@ -6,11 +6,11 @@ const Writing = () => {
 
 
     return (
-        <Flex height="100%" width="100%"  flexDirection="column" alignItems="center" justifyContent="center">
+        <Flex className={classes.container}>
         <Box className={classes.header}>
         <Heading> Writing </Heading>
         </Box>
-        <Flex className={classes.container}>
+        <Flex className={classes.description}>
         <Flex flexDirection="column">
         <h1 className={classes.h1}> A Philisophical Storyteller</h1>
             <p> I have been interested in writing and storytelling since I was a child. I graduated from

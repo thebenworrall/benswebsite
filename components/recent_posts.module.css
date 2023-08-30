@@ -1,11 +1,10 @@
-.container {
+ .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-
-.post_container {
+ }
+ 
+ .post_container {
     display: flex;
     flex-direction: column;
     margin: 40px 12px 5px 12px;
@@ -13,8 +12,17 @@
     /* max-width: 33%; */
 }
 
-.card_body {
-    background-color: rgb(255, 255, 255);
+.image {
+    width: 250px;
+    min-width: 200px;
+    height: 150px; 
+    border-radius: 25px;
+    align-items: center;
+}
+
+.image:hover {
+    width: 260px;
+    height: 170px;
 }
 
 .title {
@@ -34,13 +42,12 @@
     cursor: pointer;
 }
 
-
-.image {
-    width: 320px;
-    height: 192px; 
-    min-width: 200px;
-    border-radius: 25px;
-    align-items: center;
+.see_more {
+    text-decoration: underline;
 }
 
-
+.see_more:hover {
+    color:rgb(174, 84, 84);
+    cursor: pointer;
+    
+}

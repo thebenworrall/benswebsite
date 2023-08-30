@@ -1,3 +1,11 @@
+.container {
+    min-width: 100vh; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .header {
     width: 100%;
     height: 150px;
@@ -5,10 +13,10 @@
     color: white;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center
 }
 
-.container {
+.description {
         padding: 10px;
         margin: 10px;
         display: flex;

@@ -37,13 +37,16 @@ const NewsletterSubscribe = () => {
 
     return (
         <Flex className={classes.letter_signup} flexDirection="column" width="100%" height="300px"> 
-                    <h1 className={classes.h1}> New posts to your inbox</h1>
-                    <p className={classes.p}> Don't miss a post! Join my mailing list and get news post sent straight to your inbox.</p>
+            <div className={classes.container}>
+                    <h1 className={classes.h1}> The Newsletter </h1>
+                    <h2 className={classes.h2}> </h2>
+                    <p className={classes.p}> Don't miss a post! Join the growing mailing list and get news post sent straight to your inbox.</p>
                     <form className={classes.form} onSubmit={submitHandler}>
-                        <input ref={emailInputRef} placeholder='your email' />
-                        <button className={classes.button}> Join now </button>
+                        <input className={classes.input} ref={emailInputRef} placeholder='your email' />
+                        <button className={classes.button}> Subscribe </button>
                         {message && <p>{message}</p>}
                     </form>
+            </div>
         </Flex>
     )
 

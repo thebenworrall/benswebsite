@@ -1,13 +1,13 @@
 import { createClient } from "contentful"
 
-const accessTokenId = process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
-const spaceId = process.env.CONTENTFUL_SPACE_ID
+
 
 const getPosts = () => {
+ 
 
 const client = createClient({
-  accessToken: accessTokenId,
-  space: spaceId,
+  accessToken: process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN,
+  space: process.env.CONTENTFUL_SPACE_ID,
   host: 'preview.contentful.com'
 })
 
@@ -24,10 +24,13 @@ const getBlogPosts = async () => {
 
         const blogPost = {
 
+        id: post.fields.id,
         date: post.fields.date,
         title: post.fields.mainTitle, 
-        text: post.fields.mainText, 
+        teaser: post.fields.teaser,
+        content: post.fields.blogContent,
         mainImage: post.fields.mainImage.fields.file.url
+        
         //const secondaryImages 
 
       }
@@ -48,23 +51,3 @@ return { getBlogPosts }
 }
 
 export default getPosts
-
-// const res = await fetch('https://cdn.contentful.com', {
-//     headers: {
-//         'Authorization: Bearer'
-//     }
-// })
-
-// const data = res. 
-
-// const contentful = require('contentful')
-
-// const client = contentful.createClient({
-//   space: 'mjoieruskqzy',
-//   environment: 'master', // defaults to 'master' if not set
-//   accessToken: 'qiuBBUHKwj1QGWMOtyN0yXlSAyYJM0SZ0KtRMxh9O4E'
-// })
-
-// client.getEntry('4jECoG33LEbSicwhOLaAIj')
-// .then((entry) => console.log(entry))
-// .catch(console.error)

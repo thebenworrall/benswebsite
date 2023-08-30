@@ -1,23 +1,27 @@
 import { Flex, Box, Image, Heading } from '@chakra-ui/react'
 
 import classes from './newsletter.module.css'
+import RecentPosts from './recent_posts'
 
 
-const NewsletterBox = () => {
+
+const Newsletter = (props) => {
+
 
     return (
         
-        <Flex height="100vh"  flexDirection="column" alignItems="center" justifyContent="center">
+        <Flex className={classes.container}>
             <Box className={classes.header}>
                 <Heading className={classes.h1}> Newsletter </Heading>
-                <h2> Explore my latest ideas philosophy, psychology and creativity. </h2>
+                <h2> Explore my latest ideas on philosophy, psychology, and self-development. </h2>
             </Box>
             <Flex>
-                <p>Newsletter content goes here.</p>
+            <RecentPosts posts={props.posts} />
             </Flex>
         </Flex>
     )
 
 }
 
-export default NewsletterBox
+
+export default Newsletter

@@ -1,26 +1,36 @@
-import { Flex, Box, Image, Heading, Card, CardHeader, CardBody, CardFooter  } from '@chakra-ui/react'
-
 import HeroBanner from '../components/hero_banner'
 import AboutMe from '../components/about_me'
-import Writing from '../components/writing'
-import Development from '../components/development'
 import Newsletter from '../components/newsletter_box'
+
+import getPosts from './api/getPosts'
 
 import classes from './index.module.css'
 
-const HomePage = () => {
+const HomePage = (props) => {
+
+    console.log(props.posts)
 
     return (
-    <>
     <div className ={classes.container}>
         <HeroBanner />
         <AboutMe />
-        <Writing />
-        <Development />
-        <Newsletter />
+        <Newsletter posts={props.posts} /> 
     </div>
-    </>
     )
 }
+
+export async function getStaticProps() {
+
+    
+   
+    const { getBlogPosts } = getPosts();
+    const blogPosts = await getBlogPosts();
+
+
+    return {
+        props: { posts: blogPosts }
+    }
+}
+
 
 export default HomePage

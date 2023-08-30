@@ -7,41 +7,39 @@ const AboutMe = () => {
 
     return (
 
-    <Flex height="100%" width="100%"  flexDirection="column"  >
+    <Box className={classes.main}>
         <Box className={classes.header}>
-        <Heading> About Me </Heading>
+        <Heading id="about-section"> About Me </Heading>
         </Box>
-        <Flex className={classes.container}>
-            <Flex className={classes.image_container}>
+        <Box className={classes.container}>
+            <Box className={classes.image_container}>
                 <img className={classes.img} src="/images/ben_main.jpg" alt="Ben Worrall" height="900" width="900"></img>
-                <Flex className={classes.social} flexDirection="row" justifyContent="space-around">
+                <Box className={classes.social}>
                 <SocialIcon url="https://twitter.com/thebenworrall" />
                 <SocialIcon url="https://instagram.com/thebenworrall" />
                 <SocialIcon url="https://youtube.com/benworrall" />
-                </Flex>
-            </Flex>
+                </Box>
+            </Box>
             <Box className={classes.description}>
                 <h1 className={classes.h1}> Hey, I'm Ben!</h1>
                 <h2 className={classes.h2}> Let me tell you a little more about myself.</h2>
                 <p className={classes.p}>
-                     I'll be honest with you, I'm interested in a lot of things.
-                     Over the last decade I have spent much of my time learning about a range of topics,
-                     but what I'm most passionate about is the mind & consciousness. 
+                I'm a writer and teacher from the UK, currently based in Taipei, Taiwan. 
+                I graduated from Bournemouth University in 2014 with an undergradute degree in 
+                Scriptwriting for Film and Television. 
                  </p>
                  <p className={classes.p}>
-                    Curiosity and creativity are the main driving forces behind my work. My life goal is to understand
-                    Reality at the deepest levels through research, observation and contemplation. I'll then combine
-                    my understanding with the mediums of storytelling and technology to create innovative products for 
-                    the benefit of mankind. 
+                My interests have always seemed to revolve around the more existential aspects of life including 
+                philosophy, psychology, and human development. Therefore, both my creative writing and educational 
+                content tends to lean heavily into these areas. The plan is for my website to be a base for future projects. 
                  </p>
                  <p className={classes.p}>
-                    For me, this project is not a passing fad or even a career, but a lifelong commitment to understanding. 
-                    I'd love for you to follow along on my journey of discovery, the best way to do that would be to 
-                    subscribe to my newsletter and follow my social media accounts. 
+                You can follow my various social media channels or subscribe to my newsletter to recieve 
+                my unique insights on life, art, and also some general updates.  
                  </p>
             </Box>
-        </Flex>
-    </Flex>
+        </Box>
+    </Box>
 
     )
 

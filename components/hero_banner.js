@@ -41,15 +41,19 @@ return (
     <Flex className={classes.container}>
         <Image src='/images/ben_photography.jpg' alt='Ben Banner' width="100%" height="auto" />
         <Box className={classes.box}>
-        <h2 className={classes.h2}> RETNA </h2>
-        <h4 className={classes.h4}> Learning about life. Sharing what I discover. </h4>
-        <h1 className={classes.h1}> I share insights on philosophy, psychology, creativity & more. </h1>
-        <h1 className={classes.h1}> New articles are released every Sunday.  </h1>
-        <form className={classes.form} onSubmit={submitHandler}>
-            <input type="text" id="email" placeholder="your email" ref={emailInputRef}/>
-            <button  className={classes.button}> Read Now </button>
-            {message && <p>{message}</p>}
-        </form>
+            <div className={classes.box_content}>
+                   <h1 className={classes.title}> BEN WORRALL </h1>
+                   <h1 className={classes.subtitle}> Learning about life. Sharing what I discover.</h1>
+                    <p className={classes.p}> I release a weekly newsletter on a variety of topics including
+                    art, philosophy, psychology, creativity, and self-development.</p>
+                    <p className={classes.p}>Subscribe to get mind-bending insights
+                    sent directly to your inbox every Sunday.</p>  
+                    <form className={classes.form} onSubmit={submitHandler}>
+                        <input className={classes.input} type="text" id="email" placeholder="your email" ref={emailInputRef}/>
+                        <button  className={classes.button}> Subscribe </button>
+                        {message && <p>{message}</p>}
+                    </form>
+            </div>
         </Box>
     </Flex>
 )
