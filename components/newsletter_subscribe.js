@@ -40,7 +40,7 @@ const NewsletterSubscribe = () => {
             <div className={classes.container}>
                     <h1 className={classes.h1}> The Newsletter </h1>
                     <h2 className={classes.h2}> </h2>
-                    <p className={classes.p}> Don't miss a post! Join the growing mailing list and get news post sent straight to your inbox.</p>
+                    <p className={classes.p}> Don't miss a post! Join my growing mailing list and get new posts sent straight to your inbox.</p>
                     <form className={classes.form} onSubmit={submitHandler}>
                         <input className={classes.input} ref={emailInputRef} placeholder='your email' />
                         <button className={classes.button}> Subscribe </button>

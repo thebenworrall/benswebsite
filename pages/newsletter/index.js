@@ -12,7 +12,9 @@ const NewsletterPage = (props) => {
 
     return (
             <Flex className={classes.container} flexDirection="column">
+                <Flex>
                 <NewsletterSubscribe />
+                </Flex>
                 {/* <PostsFilter /> */}
                 <Flex className={classes.posts_container}> 
                 <BlogPosts posts={props.posts} />

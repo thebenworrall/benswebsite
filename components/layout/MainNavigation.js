@@ -23,11 +23,11 @@ return (
             </div>
             <div className={classes.navmenu_container}>
             <ul className={isActive ?`${classes.navmenu} ${classes.active}` : classes.navmenu}>
-                <li className={classes.navlink}><Link href="/"> Home </Link> </li>
-                <li className={classes.navlink}><Link href="#about-section"> About </Link> </li>
+                <li onClick={hamburgerHandler} className={classes.navlink}><Link href="/"> Home </Link> </li>
+                <li onClick={hamburgerHandler} className={classes.navlink}><Link href="/#about-section"> About </Link> </li>
                 {/* <li className={classes.navlink}><Link href="/writing"> Writing </Link></li>
                 <li className={classes.navlink}><Link href="/development" > Development </Link></li> */}
-                <li className={classes.navlink}><Link href="/newsletter"> Newsletter </Link></li>
+                <li onClick={hamburgerHandler} className={classes.navlink}><Link href="/newsletter"> Newsletter </Link></li>
             </ul>
             </div>
             <div onClick={hamburgerHandler} className={classes.hamburger}>

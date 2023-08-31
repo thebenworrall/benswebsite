@@ -34,7 +34,7 @@ const RecentPosts = (props) => {
         <Flex className={classes.container}>
         {Posts.reverse()}
         </Flex>
-        <Link href={'/newsletter'}><p className={classes.see_more}> See more</p></Link>
+        <Link href={'/newsletter'}><p className={classes.see_more}> See more </p></Link>
         </div>
     )
 
