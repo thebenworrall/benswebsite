@@ -43,8 +43,10 @@
 }
 
 .see_more {
+    font-size: 18px;
     display: flex;
     justify-content: flex-end;
+    padding: 10px 25px;
     text-decoration: underline;
 }
 

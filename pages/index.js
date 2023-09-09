@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import HeroBanner from '../components/hero_banner'
 import AboutMe from '../components/about_me'
 import Newsletter from '../components/newsletter_box'
@@ -11,11 +13,17 @@ const HomePage = (props) => {
     console.log(props.posts)
 
     return (
+        <>
+    <Head>
+    <title> Ben Worrall | Learning About Life   </title>
+        <link rel="preload" href="ben_photography.jpg" as="image" />
+    </Head>
     <div className ={classes.container}>
         <HeroBanner />
         <AboutMe />
         <Newsletter posts={props.posts} /> 
     </div>
+    </>
     )
 }
 
