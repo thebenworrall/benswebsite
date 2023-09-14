@@ -19,7 +19,7 @@ return (
     
         <nav className={classes.navbar}>
             <div className={classes.navlogo}>
-            <img src="/images/ben_logo_small.png" alt="Ben Worrall Logo" width="55" height="55"></img>
+            <a href="/"><img src="/images/ben_logo_small.png" alt="Ben Worrall Logo" width="55" height="55"></img></a>
             </div>
             <div className={classes.navmenu_container}>
             <ul className={isActive ?`${classes.navmenu} ${classes.active}` : classes.navmenu}>

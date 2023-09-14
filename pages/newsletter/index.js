@@ -26,12 +26,9 @@ const NewsletterPage = (props) => {
 
 
 export async function getStaticProps() {
-
    
     const { getBlogPosts } = getPosts();
     const blogPosts = await getBlogPosts();
-
-
 
     return {
         props: { posts: blogPosts }

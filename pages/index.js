@@ -16,7 +16,7 @@ const HomePage = (props) => {
         <>
     <Head>
     <title> Ben Worrall | Learning About Life   </title>
-        <link rel="preload" href="ben_photography.jpg" as="image" />
+        <link rel="preload" href="/public/images/ben_photography.jpg" as="image" />
     </Head>
     <div className ={classes.container}>
         <HeroBanner />
