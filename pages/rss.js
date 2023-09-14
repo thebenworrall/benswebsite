@@ -7,8 +7,8 @@ const generateRssFeed = async (posts) => {
   const feed = new Feed({
     title: "Ben Worrall RSS feed",
     description: "Stay up to date with my latest content",
-    id: "http://localhost:3000",
-    link: "http://localhost:3000",
+    id: "http://benworrall.com",
+    link: "http://benworrall.com",
     language: "en",
     image: "http://localhost:3000/logo.png",
     favicon: "http://localhost:3000/favicon.png",
