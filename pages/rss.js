@@ -1,13 +1,14 @@
 
 import { Feed } from "feed";
 import getPosts from "./api/getPosts"
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
 
 const generateRssFeed = async (posts) => {
   const feed = new Feed({
     title: "Ben Worrall RSS feed",
     description: "Stay up to date with my latest content",
-    id: "http://benworrall.com",
-    link: "http://benworrall.com",
+    id: "http://localhost:3000",
+    link: "http://localhost:3000",
     language: "en",
     image: "http://localhost:3000/logo.png",
     favicon: "http://localhost:3000/favicon.png",
@@ -18,18 +19,38 @@ const generateRssFeed = async (posts) => {
     },
   });
 
+
   posts.forEach((post) => {
 
     const postUrl = `http://benworrall.com/newsletter/${post.id}`
+
+    const htmlContent = documentToHtmlString(post.content);
+
+    const mainImageUrl = `https:${post.mainImage};`
+
+
+    const htmlWithImage = `<img src="${mainImageUrl}" alt="${post.title}">${htmlContent}`;
+
+    // const contentfulBaseUrl = 'https://images.ctfassets.net';
+
+    // const mainImageUrl = `${contentfulBaseUrl}${mainImageRelativeUrl}`
+
+ 
 
     feed.addItem({
       title: post.title,
       id: post.id,
       link: postUrl,
       description: post.teaser,
+      content: htmlWithImage,
       date: new Date(post.date),
+      enclosure: {
+        url: mainImageUrl, 
+        type: 'image/jpeg',
+      }
     });
   });
+
 
   return feed.rss2();
 };
