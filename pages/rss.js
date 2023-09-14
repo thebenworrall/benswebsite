@@ -6,21 +6,21 @@ const generateRssFeed = async (posts) => {
   const feed = new Feed({
     title: "My Website's RSS Feed",
     description: "Stay up to date with my latest content",
-    id: "http://localhost:3000",
-    link: "http://localhost:3000",
+    id: "http://benworrall.com",
+    link: "http://benworrall.com",
     language: "en",
     image: "http://localhost:3000/logo.png",
     favicon: "http://localhost:3000/favicon.png",
     author: {
-      name: "John Doe",
-      email: "john@example.com",
-      link: "http://localhost:3000/about",
+      name: "Ben Worrall",
+      email: "ben@example.com",
+      link: "http://benworrall.com",
     },
   });
 
   posts.forEach((post) => {
 
-    const postUrl = `http://localhost:3000/newsletter/${post.id}`
+    const postUrl = `http://benworrall.com/newsletter/${post.id}`
 
     feed.addItem({
       title: post.title,
