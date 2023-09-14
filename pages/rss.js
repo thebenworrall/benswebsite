@@ -4,7 +4,7 @@ import getPosts from "./api/getPosts"
 
 const generateRssFeed = async (posts) => {
   const feed = new Feed({
-    title: "My Website's RSS Feed",
+    title: "Ben Worrall RSS feed",
     description: "Stay up to date with my latest content",
     id: "http://benworrall.com",
     link: "http://benworrall.com",
