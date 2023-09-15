@@ -5,8 +5,8 @@ import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
 
 const generateRssFeed = async (posts) => {
   const feed = new Feed({
-    title: "Ben Worrall RSS feed",
-    description: "Stay up to date with my latest content",
+    title: "Ben Worrall's Newsletter Feed",
+    description: "Stay up to date with my latest insights and news.",
     id: "http://benworrall.com",
     link: "http://benworrall.com",
     language: "en",
@@ -26,10 +26,10 @@ const generateRssFeed = async (posts) => {
 
     const htmlContent = documentToHtmlString(post.content);
 
-    const mainImageUrl = `https:${post.mainImage};`
+    const mainImageUrl = `http:${post.mainImage}`
 
 
-    const htmlWithImage = `<img src="${mainImageUrl}" alt="${post.title}">${htmlContent}`;
+    const htmlWithImage = `<img src="${mainImageUrl}" alt="${post.title}">${htmlContent}`
 
     // const contentfulBaseUrl = 'https://images.ctfassets.net';
 
