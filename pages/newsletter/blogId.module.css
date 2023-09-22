@@ -1,4 +1,13 @@
 
+.blogPageContent li {
+    list-style-type: disc;
+}
+
+.blogPageContent ol li {
+    list-style-type: decimal; 
+  }
+
+
 .main {
     padding: 120px 50px 100px 50px;
     display: flex;
@@ -6,6 +15,7 @@
     margin: 0px 350px;
     max-width: 1200px;
     min-width: 335px;
+   
 }
 
 
@@ -38,13 +48,14 @@
 .main_text {
     padding-top: 50px;
     padding-bottom: 0px;
-    font-size: 23px;
+    font-size: 22px;
     color: rgb(0, 0, 0);
     margin: 0px 10px;
     max-width: 800px;
     line-height: 2;
     word-spacing: 3px;
-    font-family: 'Cormorant Garamond', serif;
+    /* font-family: 'Cormorant Garamond', serif; */
+    font-family: 'Lato', serif;
     font-weight: 500;
 }
 
@@ -54,6 +65,10 @@
     width : 1000px;
     
 }
+
+
+  
+ 
 
 @media (max-width: 1200px) {
 

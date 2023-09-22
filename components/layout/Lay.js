@@ -1,4 +1,5 @@
 import Header from "./Header"
+import Footer from "./Footer"
 
 
 
@@ -9,6 +10,7 @@ const Lay = (props) => {
        <div>
         <Header />
             <main>{props.children}</main>
+        <Footer />
         </div>
     )
 

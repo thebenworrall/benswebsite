@@ -1,4 +1,5 @@
-import { Flex, Box, Image, Heading, chakra } from '@chakra-ui/react'
+import { Flex, Box, Image, Heading, chakra, } from '@chakra-ui/react'
+import { List, ListItem, ListIcon, OrderedList, UnorderedList,} from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import getPosts from '../api/getPosts'
 import NewsletterSubscribe from '../../components/newsletter_subscribe'
@@ -72,6 +73,14 @@ useEffect(() => {
             }
             return <a href={url}>{children}</a>;
           },
+          [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
+          [BLOCKS.UL_LIST]: (node, children) => (
+            <UnorderedList>{children}</UnorderedList>
+          ),
+          [BLOCKS.OL_LIST]: (node, children) => (
+            <OrderedList>{children}</OrderedList>
+          ),
+          [BLOCKS.LIST_ITEM]: (node, children) => <ListItem>{children}</ListItem>,
 
           [BLOCKS.HEADING_1]: (node, children) => <Heading size="4x1" fontSize="45px">{children}</Heading>,
           [BLOCKS.HEADING_2]: (node, children) => <Heading size="3x1" fontSize="40px">{children}</Heading>,
@@ -98,7 +107,7 @@ console.log(currentPost)
 
 
     return (
-        <>
+        <div className={classes.blogPageContent}>
         <Flex className={classes.main}>
         <h1 className={classes.title}> {currentPost.title} </h1>
         <p className={classes.date}> Published by Ben Worrall on {currentPost.date} </p>
@@ -108,10 +117,9 @@ console.log(currentPost)
         </Flex>
         </Flex>
         <div>
-        <NewsletterSubscribe className={classes.newsletter_subscribe} /> 
-        <h1> Hello </h1>   
+        <NewsletterSubscribe className={classes.newsletter_subscribe} />  
         </div>
-        </>
+        </div>
     )
       
 }
