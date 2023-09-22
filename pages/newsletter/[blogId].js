@@ -6,6 +6,7 @@ import NewsletterSubscribe from '../../components/newsletter_subscribe'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import React, { useEffect, useState } from 'react'
+import Head from 'next/head'
 
 import classes from './blogId.module.css'
 
@@ -107,21 +108,27 @@ console.log(currentPost)
 
 
     return (
-        <div className={classes.blogPageContent}>
+    <>
+    <Head>
+    <title> {currentPost.title} </title>
+    <meta name="description" content={currentPost.teaser} />
+    </Head>
+      <div className={classes.blogPageContent}>
         <Flex className={classes.main}>
-        <h1 className={classes.title}> {currentPost.title} </h1>
-        <p className={classes.date}> Published by Ben Worrall on {currentPost.date} </p>
-        <Flex className={classes.content}>
-        <div className={classes.imageContainer}><Image className={classes.image} src={currentPost.mainImage}/></div>
-        <div className={classes.textContainer}><Box className={classes.main_text}>{contentComponents}</Box></div>
-        </Flex>
+          <h1 className={classes.title}> {currentPost.title} </h1>
+          <p className={classes.date}> Published by Ben Worrall on {currentPost.date} </p>
+          <Flex className={classes.content}>
+            <div className={classes.imageContainer}><Image className={classes.image} src={currentPost.mainImage} /></div>
+            <div className={classes.textContainer}><Box className={classes.main_text}>{contentComponents}</Box></div>
+          </Flex>
         </Flex>
         <div>
-        <NewsletterSubscribe className={classes.newsletter_subscribe} />  
+          <NewsletterSubscribe className={classes.newsletter_subscribe} />
         </div>
-        </div>
-    )
-      
+      </div>
+    </>
+  )
+
 }
 
 export async function getStaticPaths() {

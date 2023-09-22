@@ -5,12 +5,19 @@ import BlogPosts from '../../components/blog_posts'
 import getPosts from '../api/getPosts'
 
 import classes from './index.module.css'
+import Head from 'next/head'
 
 
 const NewsletterPage = (props) => {
 
 
     return (
+        <>
+        <Head> 
+            <title> Ben's Newsletter Archive</title>
+            <meta name="description" content="The complete library of Ben's philosophical articles.
+             Insights on self-development, psychology, creativity, art, and more. " />
+        </Head>
             <Flex className={classes.container} flexDirection="column">
                 <Flex>
                 <NewsletterSubscribe />
@@ -20,6 +27,7 @@ const NewsletterPage = (props) => {
                 <BlogPosts posts={props.posts} />
                 </Flex>
             </Flex>
+            </>
         )
     
 }

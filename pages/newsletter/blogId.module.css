@@ -7,6 +7,10 @@
     list-style-type: decimal; 
   }
 
+.blogPageContent {
+    min-width: 100vh;
+}
+
 
 .main {
     padding: 120px 50px 100px 50px;
