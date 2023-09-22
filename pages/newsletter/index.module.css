@@ -1,5 +1,6 @@
 .container {
     padding-top: 80px;
+    min-width: 100vh;
 }
 
 .posts_container {
