@@ -25,7 +25,7 @@
 
 
 .content {
-    display: flex;
+  display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   
@@ -38,7 +38,7 @@
 }
 
 .date {
-    margin: 0;
+    margin-bottom: 15px;
 }
 
 
@@ -52,14 +52,14 @@
 .main_text {
     padding-top: 50px;
     padding-bottom: 0px;
-    font-size: 22px;
+    font-size: 19px;
     color: rgb(0, 0, 0);
     margin: 0px 10px;
     max-width: 800px;
     line-height: 2;
     word-spacing: 3px;
     /* font-family: 'Cormorant Garamond', serif; */
-    font-family: 'Lato', serif;
+    font-family: 'Montserrat', serif;
     font-weight: 500;
 }
 
@@ -83,17 +83,21 @@
 
 @media (max-width: 450px) {
 
+
     .main {
-        padding: 100px 50px 30px 50px;
+        padding: 130px 50px 30px 50px;
         margin: 0px 10px;
-        justify-content: center;
-        align-items: center;
+        /* justify-content: center;
+        align-items: center; */
     }
+
+
    
     .main_text {
         font-size: 19px;
         word-spacing: 2px;
         margin: 0px 0px;
+        font-family: 'Lato', serif;
 
     }
 
