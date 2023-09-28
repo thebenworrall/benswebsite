@@ -15,8 +15,8 @@ const HomePage = (props) => {
     return (
         <>
     <Head>
-    <title> Ben Worrall | Learning About Life, Sharing What I discover.   </title>
-    <meta name="description" content="Philosophical insights on self-development, psychology, and creativity." />
+    <title> Ben Worrall | Learning about Life. Sharing the Discoveries.  </title>
+    <meta name="description" content="An exploration of life's biggest questions through creative storytelling and powerful insights." />
         <link rel="preload" href="/public/images/ben_photography.jpg" as="image" />
     </Head>
     <div className ={classes.container}>

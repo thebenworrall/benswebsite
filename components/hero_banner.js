@@ -43,7 +43,7 @@ return (
         <Box className={classes.box}>
             <div className={classes.box_content}>
                    <h1 className={classes.title}> BEN WORRALL </h1>
-                   <h1 className={classes.subtitle}> Learning about life. Sharing what I discover.</h1>
+                   <h1 className={classes.subtitle}> Learning about life. Sharing the Discoveries.</h1>
                     <p className={classes.p}> I release a weekly newsletter on a variety of topics including
                     art, philosophy, psychology, creativity, and self-development.</p>
                     <p className={classes.p}>Subscribe to get mind-bending insights

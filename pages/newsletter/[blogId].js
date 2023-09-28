@@ -7,6 +7,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 
 import classes from './blogId.module.css'
 
@@ -52,27 +53,55 @@ useEffect(() => {
 
             return null; // Render nothing for other asset types
           },
-          [INLINES.HYPERLINK]: (node) => {
-            const url = node.data.uri;
+          // [INLINES.HYPERLINK]: (node) => {
+          //   const url = node.data.uri;
   
-            if (url.includes("player.vimeo.com/video")) {
+          //   if (url.includes("player.vimeo.com/video")) {
+          //     return (
+          //       <iframe title="Vimeo Video" src={url} frameBorder="0" allowFullScreen />
+          //     );
+          //   } else if (url.includes("youtube.com/embed")) {
+          //     return (
+          //       <iframe
+          //         title="YouTube Video"
+          //         src={url}
+          //         width="700" 
+          //         height="400" 
+          //         allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+          //         frameBorder="0"
+          //         allowFullScreen
+          //       />
+          //     );
+          //   }
+          //   return <a href={url}>{children}</a>;
+          // },
+          [INLINES.HYPERLINK]: (node, children) => {
+            const url = node.data.uri;
+          
+            // Check if the link is an internal link (starts with '/')
+            if (url.startsWith('/')) {
               return (
-                <iframe title="Vimeo Video" src={url} frameBorder="0" allowFullScreen />
+                <Link href={url}>
+                  <a>{children}</a>
+                </Link>
               );
+            } else if (url.includes("player.vimeo.com/video")) {
+              return <iframe title="Vimeo Video" src={url} frameBorder="0" allowFullScreen />;
             } else if (url.includes("youtube.com/embed")) {
               return (
                 <iframe
                   title="YouTube Video"
                   src={url}
-                  width="700" 
-                  height="400" 
+                  width="700"
+                  height="400"
                   allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
                   frameBorder="0"
                   allowFullScreen
                 />
               );
+            } else {
+              return <a href={url}>{children}</a>;
             }
-            return <a href={url}>{children}</a>;
           },
           [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
           [BLOCKS.UL_LIST]: (node, children) => (

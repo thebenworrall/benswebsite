@@ -1,11 +1,23 @@
 
 .blogPageContent li {
-    list-style-type: disc;
+    list-style-type: square;
+   
+}
+
+.blogPageContent ul li::marker {
+    color:  rgb(197, 60, 60);
+    font-size: x-large;
 }
 
 .blogPageContent ol li {
     list-style-type: decimal; 
   }
+
+.blogPageContent a {
+    color: rgb(197, 60, 60);
+    font-weight: 600;
+
+}
 
 .blogPageContent {
     min-width: 100vh;
