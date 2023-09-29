@@ -15,7 +15,7 @@ const HomePage = (props) => {
     return (
         <>
     <Head>
-    <title> Ben Worrall | Learning about Life. Sharing the Discoveries.  </title>
+    <title> Ben Worrall | Learning about life. Sharing my discoveries.  </title>
     <meta name="description" content="An exploration of life's biggest questions through creative storytelling and powerful insights." />
         <link rel="preload" href="/public/images/ben_photography.jpg" as="image" />
     </Head>

@@ -43,10 +43,10 @@ return (
         <Box className={classes.box}>
             <div className={classes.box_content}>
                    <h1 className={classes.title}> BEN WORRALL </h1>
-                   <h1 className={classes.subtitle}> Learning about life. Sharing the Discoveries.</h1>
+                   <h1 className={classes.subtitle}> Learning about life. Sharing my discoveries.</h1>
                     <p className={classes.p}> I release a weekly newsletter on a variety of topics including
                     art, philosophy, psychology, creativity, and self-development.</p>
-                    <p className={classes.p}>Subscribe to get mind-bending insights
+                    <p className={classes.p}>Subscribe and get mind-expanding insights
                     sent directly to your inbox every Sunday.</p>  
                     <form className={classes.form} onSubmit={submitHandler}>
                         <input className={classes.input} type="text" id="email" placeholder="your email" ref={emailInputRef}/>
