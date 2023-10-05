@@ -34,7 +34,7 @@ const AboutMe = () => {
                 content tends to lean heavily into these areas. The plan is for my website to be a base for future projects. 
                  </p>
                  <p className={classes.p}>
-                You can follow my various social media channels or subscribe to my newsletter to recieve 
+                You can follow my various social media channels or subscribe to my newsletter to receive 
                 my unique insights on life, art, and also some general updates.  
                  </p>
             </Box>

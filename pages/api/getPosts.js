@@ -23,15 +23,15 @@ const getBlogPosts = async () => {
     const sanitizedBlogPosts = blogPosts.items.map( post => {
 
         const blogPost = {
-
+      
         id: post.fields.id,
         date: post.fields.date,
         title: post.fields.mainTitle, 
         teaser: post.fields.teaser,
         content: post.fields.blogContent,
-        mainImage: post.fields.mainImage.fields.file.url
+        mainImage: post.fields.mainImage.fields.file.url, 
+        key: post.fields.id
         
-        //const secondaryImages 
 
       }
 

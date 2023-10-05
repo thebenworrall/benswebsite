@@ -11,7 +11,6 @@ const [isActive, setActive] = useState(false)
 
  const hamburgerHandler = () => {
             setActive(!isActive)
-            console.log(isActive)
         }
     
        

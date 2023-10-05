@@ -103,7 +103,21 @@ useEffect(() => {
               return <a href={url}>{children}</a>;
             }
           },
-          [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
+          [BLOCKS.PARAGRAPH]: (node, children) => {
+            const isQuote = node.content.some((contentNode) => {
+              return (
+                contentNode.nodeType === 'text' &&
+                contentNode.value.trim().startsWith('>') 
+              );
+            });
+      
+            if (isQuote) {
+              return <blockquote>{children}</blockquote>;
+            } else {
+              return <p>{children}</p>;
+            }
+          },
+
           [BLOCKS.UL_LIST]: (node, children) => (
             <UnorderedList>{children}</UnorderedList>
           ),
