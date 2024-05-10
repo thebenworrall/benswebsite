@@ -157,6 +157,7 @@ const BlogDetails = (props) => {
   const shareUrl = `https://www.benworrall.com/newsletter/${currentPost.id}`;
   const title = currentPost.title;
 
+  
 
 
   return (
@@ -171,7 +172,6 @@ const BlogDetails = (props) => {
       
       <div className={classes.blogPageContent}>
 
-      
 
         <Flex direction="column" className={classes.mainWrapper}>
           <div className={classes.main}>
