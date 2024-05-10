@@ -178,7 +178,7 @@ const BlogDetails = (props) => {
             <h1 className={classes.title}>{currentPost.title}</h1>
             <div className={classes.tagContainer}>
               {currentPost.tags.map(tag => (
-                <span key={tag.sys.name} className={classes.tag}>{formatTagId(tag.sys.id)}</span>
+                <span key={tag.sys.id} className={classes.tag}>{formatTagId(tag.sys.id)}</span>
               ))}
             </div>
             <p className={classes.date}>Published by Ben Worrall on {currentPost.date}</p>
