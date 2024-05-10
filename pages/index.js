@@ -10,12 +10,11 @@ import classes from './index.module.css'
 
 const HomePage = (props) => {
 
-    console.log(props.posts)
 
     return (
         <>
     <Head>
-    <title> Ben Worrall | Learning about life. Sharing my discoveries.  </title>
+    <title> Ben Worrall | Learning about life. Sharing the discoveries.  </title>
     <meta name="description" content="An exploration of life's biggest questions through creative storytelling and powerful insights." />
         <link rel="preload" href="/public/images/ben_photography.jpg" as="image" />
     </Head>

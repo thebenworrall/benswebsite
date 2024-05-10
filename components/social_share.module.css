@@ -1,0 +1,20 @@
+.custom_social_icon_container {
+
+    margin-bottom: 10px;
+}
+
+.custom_social_icon {
+    border-radius: 5px; /* Adjust this value to get the desired roundness */
+    width: 80px; /* Set the width for a more rectangular shape */
+     /* height: 80px;  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensures the icon fits well within the rounded corners */
+    margin: 20px;
+  }
+  
+  .custom_social_icon svg {
+    width: 100%; /* Makes sure the SVG icon scales to fit the container */
+    height: auto;
+  }

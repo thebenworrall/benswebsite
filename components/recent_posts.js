@@ -1,3 +1,4 @@
+
 import React, { useContext } from 'react'
 import { Flex, Box, Image, chakra} from '@chakra-ui/react'
 import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
@@ -7,8 +8,6 @@ import Link from 'next/link'
 
 
 const RecentPosts = (props) => {
-
-    console.log(props.posts[0].date)
 
 
     const recentPosts = props.posts.slice(-4)

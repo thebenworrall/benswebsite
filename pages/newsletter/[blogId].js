@@ -1,7 +1,11 @@
-import { Flex, Box, Image, Heading, chakra, } from '@chakra-ui/react'
-import { List, ListItem, ListIcon, OrderedList, UnorderedList,} from '@chakra-ui/react'
+import { Flex, Box, Heading, Image, chakra, } from '@chakra-ui/react'
+import { List, ListItem, ListIcon, OrderedList, UnorderedList} from '@chakra-ui/react'
+import SocialShare from '../../components/social_share'
+import { FacebookMessengerShareButton, FacebookMessengerIcon, RedditShareButton, RedditIcon, TwitterShareButton, XIcon, FacebookShareButton, LinkedinShareButton, FacebookIcon, LinkedinIcon } from 'react-share'
 import { useRouter } from 'next/router'
 import getPosts from '../api/getPosts'
+import findRelatedPosts from '../utils/find_related_posts'
+import formatTagId from '../utils/format_tag_id'
 import NewsletterSubscribe from '../../components/newsletter_subscribe'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
@@ -13,26 +17,28 @@ import classes from './blogId.module.css'
 
 
 
+
 const BlogDetails = (props) => {
 
-const router = useRouter()
+  const router = useRouter()
+  const blogId = router.query.blogId
 
-const blogId = router.query.blogId
 
-
-const isCurrentPost = (post) => {
+  const isCurrentPost = (post) => {
     return post.id === blogId
-}
+  }
 
-const currentPost = props.posts.find(isCurrentPost)
-
-
-const [contentComponents, setContentComponents] = useState(null);
+  const currentPost = props.posts.find(isCurrentPost)
 
 
+  const [contentComponents, setContentComponents] = useState(null);
+  const [relatedPosts, setRelatedPosts] = useState([])
 
-useEffect(() => {
+
+
+  useEffect(() => {
     if (currentPost.content) {
+    
       const options = {
         renderNode: {
           [BLOCKS.EMBEDDED_ASSET]: (node) => {
@@ -55,7 +61,7 @@ useEffect(() => {
           },
           // [INLINES.HYPERLINK]: (node) => {
           //   const url = node.data.uri;
-  
+
           //   if (url.includes("player.vimeo.com/video")) {
           //     return (
           //       <iframe title="Vimeo Video" src={url} frameBorder="0" allowFullScreen />
@@ -77,7 +83,7 @@ useEffect(() => {
           // },
           [INLINES.HYPERLINK]: (node, children) => {
             const url = node.data.uri;
-          
+
             // Check if the link is an internal link (starts with '/')
             if (url.startsWith('/')) {
               return (
@@ -107,10 +113,10 @@ useEffect(() => {
             const isQuote = node.content.some((contentNode) => {
               return (
                 contentNode.nodeType === 'text' &&
-                contentNode.value.trim().startsWith('>') 
+                contentNode.value.trim().startsWith('>')
               );
             });
-      
+
             if (isQuote) {
               return <blockquote>{children}</blockquote>;
             } else {
@@ -136,67 +142,154 @@ useEffect(() => {
 
         },
       };
-  
+
       setContentComponents(documentToReactComponents(currentPost.content, options));
+      // setContentComponents(documentToReactComponents(currentPost.content, options));
+  
+
+      const related = findRelatedPosts(currentPost.tags.map(tag => tag.sys.id), props.posts, currentPost.id);
+      setRelatedPosts(related);
     }
   }, [currentPost.content]);
 
 
-
-
-console.log(currentPost)
-
-
+  //information for social share
+  const shareUrl = `https://www.benworrall.com/newsletter/${currentPost.id}`;
+  const title = currentPost.title;
 
 
 
-    return (
+  return (
+
     <>
-    <Head>
-    <title> {currentPost.title} </title>
-    <meta name="description" content={currentPost.teaser} />
-    </Head>
+
+      <Head>
+        <title>{currentPost.title}</title>
+        <meta name="description" content={currentPost.teaser} />
+      </Head>
+
+      
       <div className={classes.blogPageContent}>
-        <Flex className={classes.main}>
-          <h1 className={classes.title}> {currentPost.title} </h1>
-          <p className={classes.date}> Published by Ben Worrall on {currentPost.date} </p>
-          <Flex className={classes.content}>
-            <div className={classes.imageContainer}><Image className={classes.image} src={currentPost.mainImage} /></div>
-            <div className={classes.textContainer}><Box className={classes.main_text}>{contentComponents}</Box></div>
-          </Flex>
+
+      
+
+        <Flex direction="column" className={classes.mainWrapper}>
+          <div className={classes.main}>
+            <h1 className={classes.title}>{currentPost.title}</h1>
+            <div className={classes.tagContainer}>
+              {currentPost.tags.map(tag => (
+                <span key={tag.sys.name} className={classes.tag}>{formatTagId(tag.sys.id)}</span>
+              ))}
+            </div>
+            <p className={classes.date}>Published by Ben Worrall on {currentPost.date}</p>
+            <Flex className={classes.content}>
+              <div className={classes.imageContainer}><Image className={classes.image}  src={currentPost.mainImage} alt={currentPost.title} /></div>
+              <div className={classes.textContainer}><Box className={classes.main_text}>{contentComponents}</Box></div>
+            </Flex>
+            <SocialShare url={shareUrl} title={currentPost.title} />
+          </div>
+
         </Flex>
-        <div>
-          <NewsletterSubscribe className={classes.newsletter_subscribe} />
+
+
+        <div className={classes.sidebar}>
+          <div className={classes.profileSection}>
+            <Image src="/images/ben_main.jpg" alt="Ben Worrall"  className={classes.profileImage} />
+            <h3 className={classes.profileHeader}>Who is Ben Worrall?</h3>
+            <p className={classes.profileText}>I'm a philosophical writer and teacher from the UK. My focus is sharing insights on human development through educational content and captivating storytelling.</p>
+            <a href="/#about-section" className={classes.profileButton}>Learn More</a>
+          </div>
+
+          <div className={classes.headingContainer}>
+            <Heading textAlign="center" className={classes.headingWithLine}>Related Posts</Heading>
+          </div>
+          <UnorderedList>
+            {relatedPosts.map(post => (
+              <List className={classes.sidebar_list} key={post.id}>
+                <Link href={`/newsletter/${post.id}`}>
+                  <Flex align="center" flexDirection="column">
+                    <a className={classes.newsletterLinks}>{post.title}</a>
+                    <Image src={post.mainImage} alt={`Image for ${post.title}`} className={classes.sidebar_image} />
+                  </Flex>
+                </Link>
+              </List>
+            ))}
+          </UnorderedList>
+          {/* Space for ads or additional links */}
+          {/* <Heading size="md" mt="20px" mb="10px">Featured Products</Heading>
+          <p>Product links or ads could go here</p> */}
         </div>
+
       </div>
+      <NewsletterSubscribe className={classes.newsletter_subscribe} />
     </>
-  )
+  );
+
 
 }
+
+
 
 export async function getStaticPaths() {
 
-    const { getBlogPosts } = getPosts();
-    const blogPosts = await getBlogPosts();
+  const { getBlogPosts } = getPosts();
+  const blogPosts = await getBlogPosts();
 
 
-return {
-    fallback: false, 
+  return {
+    fallback: false,
     paths: blogPosts.map((blogpost) => ({
-        params: { blogId: blogpost.id.toString() }
+      params: { blogId: blogpost.id.toString() }
     }))
+  }
 }
-}
+
+
+// NEW STATIC PATHS NEWS EXPERIMENTAL 
+
+// export async function getStaticPaths() {
+//   const { getBlogPosts } = getPosts();
+//   const posts = await getBlogPosts();
+
+//   const paths = posts.map((post) => ({
+//     params: { blogId: post.id.toString() }
+//   }));
+
+//   return { paths, fallback: 'blocking' };
+// }
+
+
+
 
 export async function getStaticProps() {
 
-    const { getBlogPosts } = getPosts();
-    const blogPosts = await getBlogPosts();
+  const { getBlogPosts } = getPosts();
+  const blogPosts = await getBlogPosts();
 
 
-    return {
-        props: { posts: blogPosts }
-    }
+  return {
+    props: { posts: blogPosts },
+    revalidate:3600,
+  }
 }
+
+
+
+/// GET STATIC PROPS NEW EXPERIMENTAL 
+
+// export async function getStaticProps({params}) {
+
+//   const { getBlogPostById } = getPosts();
+//   const post = await getBlogPostById(params.blogId);
+//   console.log("fetehed post data", post); // Check what's being returned here
+
+
+//   return {
+//     props: { post },
+//     revalidate:3600,
+//   }
+// }
+
+
 
 export default BlogDetails

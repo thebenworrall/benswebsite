@@ -14,6 +14,7 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@mailchimp/mailchimp_marketing": "^3.0.80",
+    "axios": "^1.6.8",
     "contentful": "^10.5.0",
     "feed": "^4.2.2",
     "framer-motion": "^10.12.0",
@@ -21,6 +22,7 @@
     "next-rss": "^1.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-share": "^5.1.0",
     "react-social-icons": "^5.15.0",
     "rss": "^1.2.2"
   },

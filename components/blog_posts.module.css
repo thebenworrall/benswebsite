@@ -1,4 +1,113 @@
+
 .container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        /* align-items: flex-start; Align items from the top */
+        padding: 20px; /* Padding around the container */
+}
+
+.post_container {
+        display: flex;
+        flex-direction: column; /* Stack the elements vertically */
+        align-items: center; /* Center align the child elements */
+        width: 320px; /* Fixed width */
+        margin: 25px;
+}
+
+
+.title {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    padding: 0px 10px;
+    line-height: 1.3;
+    height: 2.7em;
+    color: rgb(52, 49, 49);
+    text-align: left; /* Explicit left alignment */
+    word-wrap: break-word; 
+}
+
+.title:hover {
+    color: rgb(174, 84, 84);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.imageWrapper {
+    width: 320px;
+    height: 192px;
+    overflow: hidden;
+    border-radius: 25px;
+    position: relative; /* For Next.js Image component */
+    align-self: start;  
+   
+    
+    
+}
+
+.imageWrapper image {
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+    object-fit: fill; 
+    width: 100%; 
+    height: 100%; 
+    border-radius: 25px;
+}
+
+.imageWrapper:hover img {
+    transform: scale(1.02); /* subtle zoom effect */
+}
+
+.tagContainer {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 6px;
+    display: flex;
+    justify-content: left;
+    width: 100%;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #607D8B; /* Blue gray background */
+    color: #fff; /* White text for readability */
+    border-radius: 15px; /* Rounded corners */
+    padding: 5px 10px; /* Padding inside the tag for better visual spacing */
+    font-size: 0.7em; /* Smaller text size for tag-like appearance */
+    margin-right: 5px; /* Space between tags */
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        padding: 0px; /* Reduce padding */
+        margin: 15px 0px;
+    }
+
+    .post_container {
+        padding: 10px; /* Reduce padding inside each post container */
+        margin: 17px 5px; /* Reduce margin to fit the screen */
+    }
+
+    .title, .tagContainer, .imageWrapper {
+        padding: 0 5px; /* Reduce padding */
+    }
+
+    .input, .button { /* If input and button are also styled here */
+        width: calc(100% - 10px); /* Adjust width to fit inside the post container */
+    }
+}
+
+
+
+
+
+
+
+/* .container {
     width:100%;
     display: flex;
     flex-wrap: wrap;
@@ -12,7 +121,7 @@
     margin: 40px 12px 5px 12px;
     flex-wrap: wrap;
     /* max-width: 33%; */
-}
+/* }
 
 .card_body {
     background-color: rgb(255, 255, 255);
@@ -23,7 +132,7 @@
     font-weight: 700;
     max-width: 240px;
     /* text-transform: uppercase; */
-    margin-top: 10px;
+    /* margin-top: 10px;
     margin-bottom: 20px;
     margin-left: 10px;
     color: rgb(52, 49, 49);
@@ -50,4 +159,4 @@
     height: 200px; 
 }
 
-
+ /* */ 

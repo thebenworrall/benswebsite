@@ -1,5 +1,421 @@
 
 .blogPageContent {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh; 
+    
+}
+
+.blogPageContent li {
+    list-style-type: square;
+   
+}
+
+
+.blogPageContent ul li::marker {
+    color:  rgb(197, 60, 60);
+    font-size: x-large
+}
+
+.blogPageContent ol li {
+    list-style-type: decimal; 
+  }
+
+.blogPageContent a {
+    color: rgb(197, 60, 60);
+    font-weight: 600;
+
+}
+
+.blogPageContent blockquote {
+    background-color: #333; /* Background color for quotes */
+    border-left: 4px solid rgb(197, 60, 60); /* Left border for quotes */
+    padding: 20px 15px; /* Spacing within quotes */
+    margin: 20px 0px; /* Margin around quotes */
+    font-size: 18px; /* Font size for quotes */
+    color: #f9f9f9; /* Text color for quotes */
+  }
+
+
+  .mainWrapper {
+    flex: 3; /* Adjust based on your design needs */
+    width: 100%
+  }
+
+
+
+.main {
+    padding: 20px;
+    flex-grow: 1;
+    margin-top: 120px;
+    align-self:center;
+    max-width: 800px; 
+ 
+}
+
+
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start; 
+}
+
+.title { 
+    font-size: xx-large; 
+    font-weight: bold;
+    padding-bottom: 15px
+}
+
+.tagContainer {
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #607D8B; /* Blue gray background */
+    color: #fff; /* White text for readability */
+    border-radius: 15px; /* Rounded corners */
+    padding: 5px 10px; /* Padding inside the tag for better visual spacing */
+    font-size: 0.8em; /* Smaller text size for tag-like appearance */
+    margin-right: 5px; /* Space between tags */
+}
+
+.date {
+    margin-bottom: 15px;
+}
+
+
+.image {
+    
+    border-radius: 10px;
+    width: 850px;
+
+}
+
+.main_text {
+    padding-top: 50px;
+    padding-bottom: 0px;
+    font-size: 19px;
+    color: rgb(0, 0, 0);
+    margin: 0px 10px;
+    max-width: 800px;
+    line-height: 2;
+    word-spacing: 3px;
+    /* font-family: 'Cormorant Garamond', serif; */
+    font-family: 'Montserrat', serif;
+    font-weight: 500;
+}
+
+.sidebar {
+    flex: 0.9; 
+    padding: 20px;
+    border-left:  2px solid #ccc;
+    margin-top: 80px;
+    min-width: 200px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adds a subtle shadow for depth */
+    background-color: #f4f4f9; /* Light grey color, you can choose any light color that fits your design */
+    color: #333; /* Ensuring good contrast for readability */ 
+}
+
+.sidebar_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none !important;
+    padding: 10px 5px;
+}
+
+.sidebar_image {
+    width: 100%; /* Make images full-width within their container */
+    max-width: 330px; /* Set a maximum width for the images */
+    height: 190px; /* Maintain aspect ratio */
+    border-radius: 20px;
+    border: 3px solid #ccc; /* Light grey border */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Soft shadow */
+   
+}
+
+.sidebar_image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Deeper shadow on hover */
+    cursor: pointer;
+    
+}
+
+.sidebar a {
+    color: black;
+}
+
+.headingContainer {
+    text-align: center; /* Ensures contents are centered */
+    position: relative; /* For positioning the pseudo-element absolutely within this container */
+}
+
+.headingWithLine {
+    position: relative;
+    display: inline-block; /* Ensures the pseudo-element aligns correctly under the text */
+    margin-bottom: 0px;
+    margin-top: 50px;
+    color: black;
+}
+
+.headingWithLine::after {
+    content: ''; /* Required for the pseudo-element to show */
+    display: block; /* Makes it a block element so it can have width and height */
+    width: 50%; /* Adjust this value to control the length of the line */
+    height: 3px; /* Thickness of the underline */
+    background-color: rgb(180, 74, 74); /* Color of the underline */
+    position: absolute;
+    left: 25%; /* Centers the line under the text. Adjust as needed based on the width */
+    bottom: -15px; /* Distance of the line from the bottom of the text */
+}
+
+
+.newsletterLinks {
+    text-align: center; /* Center-align the text */
+    font-size: 18px;
+    display: block; /* Make the link block to take full width */
+    color: rgb(14, 13, 13); /* Keeping your color scheme */
+    font-weight: 600; /* Bold text */
+    margin: 50px 0px 10px 0px;
+}
+
+.newsletterLinks:hover {
+    color:rgb(197, 60, 60);
+    cursor: pointer; 
+}
+
+.profileSection {
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Aligns children (text, images, etc.) in a column */
+    align-items: center;
+    padding: 20px;
+    border-bottom: 2px solid #ccc; /* Optional separator */
+    margin-top: 80px;
+}
+
+ .profileImage {
+    width: 160px; /* Smaller size */
+    height: 150px; /* Equal width and height to maintain aspect ratio */
+    border-radius: 50%; /* Ensures the image is circular */
+    border: 2px solid #ccc; /* Adds a border around the image */
+    margin-bottom: 10px;
+    object-fit: cover; /* Ensures the image covers the area, useful for cropping */
+    
+}
+
+.profileHeader {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+}
+
+.profileText {
+    font-size: 17px;
+    color: #666;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.sidebar .profileButton {
+    background-color: rgb(179, 61, 61);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 30px 0px;
+}
+
+.profileButton:hover {
+    background-color: rgb(197, 60, 60);
+    color: white;
+}
+
+.newsletter_subscribe {
+    margin-top: 0px;
+    margin-left: -120px; /* Negates 20px padding from the left side of the .main */
+    margin-right: -20px; /* Negates 20px padding from the right side of the .main */
+    width: calc(100% + 40px); /* Extends the width to cover the negated padding on both sides */
+    border-radius: 20px;
+}
+
+
+  /* Adjustments for tablets and small desktops */
+
+@media (max-width: 1100px) {
+    
+    .blogPageContent {
+        flex-direction: column;
+        
+    }
+
+    .sidebar {
+        display: flex; /* Show the sidebar */
+        flex-direction: column;
+        align-items: center;
+        width: 100%; /* Full width to fit below the main content */
+        height: 10%;
+        padding: 20px;
+        border-left: none; /* Remove the left border */
+        margin-top: 50px; /* Adjust top margin for spacing */
+        box-shadow: none; /* Optional: remove the shadow or keep it based on your design preference */
+    }
+
+   
+    
+    .sidebar_image {
+        width: 100%; /* Make images full-width within their container */
+        max-width: 330px; /* Set a maximum width for the images */
+        height: 190px; /* Maintain aspect ratio */
+        border-radius: 20px;
+        border: 3px solid #ccc; /* Light grey border */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Soft shadow */
+       
+    }
+
+        
+
+    .profileSection {
+        display: none;
+    }
+
+
+    .main {
+
+        margin-top: 80px; /* Adds space on top when the sidebar is gone */
+        padding: 20px; /* Adjusted padding for better readability */
+        max-width: 95%; /* Ensures it doesn't exceed the viewport width */
+        
+
+
+        /* flex: 1;
+        width: 100%; 
+        margin: 0 auto;
+        padding: 100px 40px 20px; */
+    }
+
+    .image {
+        width: 100%;
+    }
+
+    .main_text, .image {
+        max-width: 100%; /* Ensure these elements don't exceed the container width */
+    }
+
+
+}
+
+/* Adjustments for mobile phones */
+@media (max-width: 450px) {
+    .main {
+        margin-top: 100px;
+        padding: 15px 15px; /* Reduced padding for very small screens */
+    }
+
+    .image {
+        width: 100%; /* Full width images on small screens */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .main_text {
+        word-spacing: normal; /* Normal word spacing */
+        line-height: 1.5; /* Enhanced line height for better readability */
+    }
+
+    .title {
+        font-size: xx-large; /* Adequate size for titles to stand out */
+    }
+
+
+    .sidebar {
+        padding: 0px 5px 30px 5px; /* Adjusted padding for sidebar elements */
+        display: none;
+    }
+
+    .sidebar_list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        list-style-type: none !important;
+        padding: 0px 5px;
+    }
+
+    .newsletterLinks {
+        text-align: center; /* Center-align the text */
+        font-size: 18px;
+        display: block; /* Make the link block to take full width */
+        color: rgb(14, 13, 13); /* Keeping your color scheme */
+        font-weight: 600; /* Bold text */
+        margin: 50px 60px 10px 60px;
+    }
+
+    .profileSection {
+        display: none;
+    }
+
+    .newsletter_subscribe {
+        width: auto; /* Allows the subscription box to adjust to the screen size */
+    }
+}
+
+
+
+
+
+
+
+/*  
+
+@media (max-width: 1000px) {
+
+
+    .blogPageContent {
+        flex-direction: column; 
+    }
+
+    .main, .sidebar {
+        flex: none;
+        width: 100%; 
+        margin: 0px 0px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 450px) {
+
+
+    .main {
+        padding: 130px 50px 30px 50px;
+        margin: 0px 10px;
+        /* justify-content: center;
+        align-items: center; */
+    /* } */
+
+
+   
+    /* .main_text {
+        font-size: 19px;
+        word-spacing: 2px;
+        margin: 0px 0px;
+        font-family: 'Lato', serif;
+
+    } */
+
+
+/* } */ 
+
+
+
+/* Old CSS!!!!! */
+
+
+/* .blogPageContent {
     min-width: 100vh;
 }
 
@@ -25,17 +441,17 @@
 
 .blogPageContent blockquote {
     background-color: #333; /* Background color for quotes */
-    border-left: 4px solid rgb(197, 60, 60); /* Left border for quotes */
-    padding: 20px 15px; /* Spacing within quotes */
-    margin: 20px 0px; /* Margin around quotes */
-    font-size: 18px; /* Font size for quotes */
-    color: #f9f9f9; /* Text color for quotes */
-  }
+    /* border-left: 4px solid rgb(197, 60, 60); 
+    padding: 20px 15px; 
+    margin: 20px 0px; 
+    font-size: 18px; 
+    color: #f9f9f9; 
+  } */
 
 
 
-.main {
-    padding: 120px 50px 100px 50px;
+/* .main {
+    padding: 120px 50px 20px 50px;
     display: flex;
     flex-direction: column;
     margin: 0px 350px;
@@ -80,7 +496,6 @@
     max-width: 800px;
     line-height: 2;
     word-spacing: 3px;
-    /* font-family: 'Cormorant Garamond', serif; */
     font-family: 'Montserrat', serif;
     font-weight: 500;
 }
@@ -91,6 +506,26 @@
     width : 1000px;
     
 }
+
+.custom_social_icon_container {
+
+    margin-bottom: 50px;
+}
+
+.custom_social_icon {
+    border-radius: 5px; 
+    width: 80px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+    margin: 20px;
+  }
+  
+  .custom_social_icon svg {
+    width: 100%;
+    height: auto;
+  }
 
 
   
@@ -109,8 +544,6 @@
     .main {
         padding: 130px 50px 30px 50px;
         margin: 0px 10px;
-        /* justify-content: center;
-        align-items: center; */
     }
 
 
@@ -124,4 +557,4 @@
     }
 
 
-}
+} */ 

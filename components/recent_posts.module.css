@@ -1,16 +1,20 @@
+
+
+
  .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
  }
  
  .post_container {
     display: flex;
     flex-direction: column;
-    margin: 40px 12px 5px 12px;
+    margin: 40px 12px 0px 12px;
     flex-wrap: wrap;
-    /* max-width: 33%; */
-}
+     
+ }
 
 .image {
     width: 250px;
@@ -21,15 +25,13 @@
 }
 
 .image:hover {
-    width: 260px;
-    height: 170px;
+    transform: scale(1.02)
 }
 
 .title {
     font-size: 16px;
     font-weight: 700;
     max-width: 240px;
-    /* text-transform: uppercase; */
     margin-top: 10px;
     margin-bottom: 20px;
     margin-left: 10px;
@@ -40,13 +42,13 @@
     color: rgb(174, 84, 84);
     text-decoration: none !important;
     cursor: pointer;
-}
+} 
 
-.see_more {
+ .see_more {
     font-size: 18px;
     display: flex;
     justify-content: flex-end;
-    padding: 10px 25px;
+    padding: 5px 25px;
     text-decoration: underline;
 }
 
@@ -54,4 +56,4 @@
     color:rgb(174, 84, 84);
     cursor: pointer;
     
-}
+} 

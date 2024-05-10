@@ -15,15 +15,17 @@ const NewsletterSubscribe = () => {
        const submitHandler = async (event) => {
            event.preventDefault()
            
-   
+
            const res = await fetch('/api/subscribe', {
                method: 'POST',
                body: JSON.stringify({ email: emailInputRef.current.value }),
                headers: {'Content-Type' : 'application/json'}
-   
        })
+    
    
        const {error} = await res.json()
+
+       console.log(error)
    
        if (error) {
            setMessage(error)
@@ -36,11 +38,11 @@ const NewsletterSubscribe = () => {
        }
 
     return (
-        <Flex className={classes.letter_signup} flexDirection="column" width="100%" height="300px"> 
+        <Flex className={classes.letter_signup} flexDirection="column" width="100%" height="280px"> 
             <div className={classes.container}>
                     <h1 className={classes.h1}> The Newsletter </h1>
                     <h2 className={classes.h2}> </h2>
-                    <p className={classes.p}> Don't miss a post! Join my growing mailing list and get new posts sent straight to your inbox.</p>
+                    <p className={classes.p}> Don't miss a post. Join my growing mailing list and get new posts sent straight to your inbox.</p>
                     <form className={classes.form} onSubmit={submitHandler}>
                         <input className={classes.input} ref={emailInputRef} placeholder='your email' />
                         <button className={classes.button}> Subscribe </button>

@@ -26,7 +26,7 @@ return (
                 <li onClick={hamburgerHandler} className={classes.navlink}><Link href="/#about-section"> About </Link> </li>
                 {/* <li className={classes.navlink}><Link href="/writing"> Writing </Link></li>
                 <li className={classes.navlink}><Link href="/development" > Development </Link></li> */}
-                <li onClick={hamburgerHandler} className={classes.navlink}><Link href="/newsletter"> Newsletter </Link></li>
+                <li onClick={hamburgerHandler} className={classes.navlink}><Link href="/newsletter"> Newsletters </Link></li>
             </ul>
             </div>
             <div onClick={hamburgerHandler} className={classes.hamburger}>
