@@ -4,8 +4,8 @@ import SocialShare from '../../components/social_share'
 import { FacebookMessengerShareButton, FacebookMessengerIcon, RedditShareButton, RedditIcon, TwitterShareButton, XIcon, FacebookShareButton, LinkedinShareButton, FacebookIcon, LinkedinIcon } from 'react-share'
 import { useRouter } from 'next/router'
 import getPosts from '../api/getPosts'
-import findRelatedPosts from '../utils/find_related_posts'
-// import formatTagId from '../utils/format_tag_id'
+import findRelatedPosts from '../../utils/find_related_posts'
+import formatTagId from '../../utils/format_tag_id'
 import NewsletterSubscribe from '../../components/newsletter_subscribe'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
@@ -176,11 +176,11 @@ const BlogDetails = (props) => {
         <Flex direction="column" className={classes.mainWrapper}>
           <div className={classes.main}>
             <h1 className={classes.title}>{currentPost.title}</h1>
-            {/* <div className={classes.tagContainer}>
+            <div className={classes.tagContainer}>
               {currentPost.tags.map(tag => (
                 <span key={tag.sys.id} className={classes.tag}>{formatTagId(tag.sys.id)}</span>
               ))}
-            </div> */}
+            </div>
             <p className={classes.date}>Published by Ben Worrall on {currentPost.date}</p>
             <Flex className={classes.content}>
               <div className={classes.imageContainer}><Image className={classes.image}  src={currentPost.mainImage} alt={currentPost.title} /></div>
