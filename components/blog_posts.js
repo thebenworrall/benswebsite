@@ -34,11 +34,11 @@ const BlogPosts = ({ posts, filter }) => {
                                 className={classes.image}
                             />
                         </div>
-                        <div className={classes.tagContainer}>
+                        {/* <div className={classes.tagContainer}>
                             {post.tags && post.tags.map(tag => (
                                 <span key={tag.sys.id} className={classes.tag}>{formatTagId(tag.sys.id)}</span>
                             ))}
-                        </div>
+                        </div> */}
                         <h1 className={classes.title}>{post.title}</h1>
                     </a>
                 </Link>
