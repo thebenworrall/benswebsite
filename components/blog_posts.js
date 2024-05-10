@@ -3,7 +3,7 @@ import { Flex, Box } from '@chakra-ui/react';
 import classes from './blog_posts.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
-import formatTagId from '../pages/utils/format_tag_id'
+// import formatTagId from '../pages/utils/format_tag_id'
 
 const BlogPosts = ({ posts, filter }) => {
     const postMatchesFilter = (post) => {
