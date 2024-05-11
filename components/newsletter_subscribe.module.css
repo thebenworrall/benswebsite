@@ -31,6 +31,7 @@
     padding-top: 15px;
     padding-bottom: 12px;
     color: rgb(215, 210, 210);
+    margin-right: 45px
 }
 
 .input {
@@ -60,10 +61,16 @@
     .container {
         margin-top: 25px;
         margin-left: 25px;
+        margin-right: 20px;
     }
 
     .h1 {
         font-size: 35px;
+    }
+
+    .p{
+        padding-top: 5px;
+        padding-bottom: 0px;
     }
 
     .input {
@@ -73,6 +80,8 @@
     .button {
         padding: 5px 15px;
     }
+
+
 }
 
 
@@ -81,6 +90,7 @@
     .container {
         margin-top: 20px;
         margin-left: 25px;
+        margin-right: 20px;
     }
 
     .h1 {

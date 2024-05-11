@@ -32,7 +32,7 @@
 .blogPageContent blockquote {
     background-color: #333; /* Background color for quotes */
     border-left: 4px solid rgb(197, 60, 60); /* Left border for quotes */
-    padding: 20px 15px; /* Spacing within quotes */
+    padding: 20px 15px 1px 15px; /* Spacing within quotes */
     margin: 20px 0px; /* Margin around quotes */
     font-size: 18px; /* Font size for quotes */
     color: #f9f9f9; /* Text color for quotes */

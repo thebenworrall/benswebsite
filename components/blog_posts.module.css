@@ -19,7 +19,7 @@
 
 .title {
     width: 100%;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     margin-top: 10px;
     margin-bottom: 8px;
@@ -27,7 +27,7 @@
     line-height: 1.3;
     height: 2.7em;
     color: rgb(52, 49, 49);
-    text-align: left; /* Explicit left alignment */
+    text-align: center; /* Explicit left alignment */
     word-wrap: break-word; 
 }
 
@@ -64,9 +64,9 @@
 .tagContainer {
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: 6px;
+    margin-left: 0px;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     width: 100%;
 }
 
@@ -92,12 +92,23 @@
         margin: 17px 5px; /* Reduce margin to fit the screen */
     }
 
-    .title, .tagContainer, .imageWrapper {
-        padding: 0 5px; /* Reduce padding */
+     .tagContainer, .imageWrapper {
+        padding: 0 0px; /* Reduce padding */
     }
 
+    
     .input, .button { /* If input and button are also styled here */
         width: calc(100% - 10px); /* Adjust width to fit inside the post container */
+    }
+
+    .tag {
+        display: inline-block;
+        background-color: #607D8B; /* Blue gray background */
+        color: #fff; /* White text for readability */
+        border-radius: 15px; /* Rounded corners */
+        padding: 5px 10px; /* Padding inside the tag for better visual spacing */
+        font-size: 0.7em; /* Smaller text size for tag-like appearance */
+        margin-right: 5px; /* Space between tags */
     }
 }
 
