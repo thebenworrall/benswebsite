@@ -5,7 +5,7 @@
 }
 
 .container {
-    margin-top: 10px;
+    margin-top: 12px;
     margin-left: 40px;
     margin-right: 10px;
 }
@@ -19,19 +19,37 @@
   }
 
 .h1 {
-    font-size: 50px;
-    font-weight: 800;
-    margin-top: 15px;
     
+    /* font-style: italic; */
+    font-size: 50px;
+    font-weight: 500;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block; /* Ensures the pseudo-element aligns correctly under the text */
 }
 
+.h1::after {
+    content: ''; /* Required for the pseudo-element to show */
+    display: block; /* Makes it a block element so it can have width and height */
+    width: 100%; /* Adjust this value to control the length of the line */
+    height: 3px; /* Thickness of the underline */
+    background-color: rgba(180, 74, 74, 0.911); /* Color of the underline */
+    position: absolute;
+    left: 0%; /* Centers the line under the text. Adjust as needed based on the width */
+    bottom: -5px; /* Distance of the line from the bottom of the text */
+}
+
+
 .p {
+    
     font-weight: 600;
-    font-size: 18px;
-    padding-top: 15px;
-    padding-bottom: 12px;
+    font-size: 21px;
+    padding-top: 10px;
+    padding-bottom: 0px;
     color: rgb(215, 210, 210);
     margin-right: 45px
+    
 }
 
 .input {
@@ -59,13 +77,14 @@
 @media screen and ( max-width: 450px ) {
 
     .container {
-        margin-top: 25px;
+        margin-top: 18px;
         margin-left: 25px;
         margin-right: 20px;
     }
 
     .h1 {
         font-size: 35px;
+        margin-top: 0px;
     }
 
     .p{
@@ -88,13 +107,14 @@
 @media screen and ( max-width: 300px ) {
 
     .container {
-        margin-top: 20px;
+        margin-top: 15px;
         margin-left: 25px;
         margin-right: 20px;
     }
 
     .h1 {
         font-size: 35px;
+        margin-top: 0px;
     }
 
     .input {
