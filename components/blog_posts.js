@@ -7,14 +7,14 @@ import formatTagId from '../utils/format_tag_id';
 
 const BlogPosts = ({ posts, filter }) => {
     const postMatchesFilter = (post) => {
-        const titleMatch = post.title.toLowerCase().includes(filter.toLowerCase());
-        const tagsMatch = Array.isArray(post.tags) && post.tags.every(tag => 
-            tag.sys && typeof tag.sys.id === 'string' && tag.sys.id.toLowerCase().includes(filter.toLowerCase())
+        const normalizedFilter = filter.trim().toLowerCase();
+        const titleMatch = post.title.toLowerCase().includes(normalizedFilter);
+        const tagsMatch = Array.isArray(post.tags) && post.tags.some(tag => 
+            tag.sys && typeof tag.sys.id === 'string' && formatTagId(tag.sys.id).toLowerCase().includes(normalizedFilter)
         );
         return titleMatch || tagsMatch;
     };
 
-    // Ensure posts is an array to avoid `.filter` errors
     const filteredPosts = Array.isArray(posts) ? posts.filter(postMatchesFilter) : [];
 
     const Posts = filteredPosts.map((post) => {
@@ -36,7 +36,9 @@ const BlogPosts = ({ posts, filter }) => {
                         </div>
                         <div className={classes.tagContainer}>
                             {post.tags && post.tags.map(tag => (
-                                <span key={tag.sys.id} className={classes.tag}>{formatTagId(tag.sys.id)}</span>
+                                <span key={tag.sys.id} className={classes.tag}>
+                                    {formatTagId(tag.sys.id)}
+                                </span>
                             ))}
                         </div>
                         <h1 className={classes.title}>{post.title}</h1>
@@ -54,8 +56,6 @@ const BlogPosts = ({ posts, filter }) => {
 }
 
 export default BlogPosts;
-
-
 
 //RECENT OLD CODE 
 // import React from 'react';

@@ -12,6 +12,7 @@ import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import formatDate from '../../utils/formatDate'
 
 import classes from './blogId.module.css'
 
@@ -181,7 +182,7 @@ const BlogDetails = (props) => {
                 <span key={tag.sys.id} className={classes.tag}>{formatTagId(tag.sys.id)}</span>
               ))}
             </div>
-            <p className={classes.date}>Published by Ben Worrall on {currentPost.date}</p>
+            <p className={classes.date}>Published by Ben Worrall {formatDate(currentPost.date)}</p>
             <Flex className={classes.content}>
               <div className={classes.imageContainer}><Image className={classes.image}  src={currentPost.mainImage} alt={currentPost.title} /></div>
               <div className={classes.textContainer}><Box className={classes.main_text}>{contentComponents}</Box></div>

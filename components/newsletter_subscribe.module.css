@@ -24,27 +24,27 @@
     font-size: 50px;
     font-weight: 500;
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     position: relative;
-    display: inline-block; /* Ensures the pseudo-element aligns correctly under the text */
+    /* display: inline-block;  */
 }
 
-.h1::after {
-    content: ''; /* Required for the pseudo-element to show */
-    display: block; /* Makes it a block element so it can have width and height */
-    width: 100%; /* Adjust this value to control the length of the line */
-    height: 3px; /* Thickness of the underline */
-    background-color: rgba(180, 74, 74, 0.911); /* Color of the underline */
+/* .h1::after {
+    content: ''; 
+    display: block; 
+    width: 100%; 
+    height: 3px; 
+    background-color: rgba(180, 74, 74, 0.911); 
     position: absolute;
-    left: 0%; /* Centers the line under the text. Adjust as needed based on the width */
-    bottom: -5px; /* Distance of the line from the bottom of the text */
-}
+    left: 0%; 
+    bottom: -5px; 
+} */
 
 
 .p {
     
     font-weight: 600;
-    font-size: 21px;
+    font-size: 20px;
     padding-top: 10px;
     padding-bottom: 0px;
     color: rgb(215, 210, 210);

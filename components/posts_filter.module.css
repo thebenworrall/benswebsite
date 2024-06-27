@@ -8,6 +8,7 @@
     align-items: center;
     margin-bottom: 20px;
     width: 100%; /* Ensures the container fits within the viewport width */
+    position: relative; /* Add this for positioning the suggestions dropdown */
 }
 
 .filterTitle {
@@ -32,4 +33,32 @@
 .searchInput:focus {
     border-color: #ffffff;
     box-shadow: 0 0 0 3px rgba(206, 77, 63, 0.434);
+}
+
+.suggestionsList {
+    position: absolute;
+    top: 100%; /* Position exactly below the input */
+    left: 50%; /* Center align */
+    transform: translateX(-50%); /* Center align */
+    width: 100%;
+    max-width: 500px; /* Ensure it matches the input width */
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: rgba(255, 255, 255, 0.902);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    z-index: 1000;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.suggestionItem {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestionItem:hover {
+    background-color: #f0f0f0;
 }
