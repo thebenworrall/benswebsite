@@ -39,12 +39,12 @@ const HeroBanner = () => {
 return (
 
     <Flex className={classes.container}>
-        <Image src='/images/ben_photography.jpg' alt='Ben Banner' width="100%" height="auto" />
+        <Image src='/images/ben_photography.jpg' alt='Ben Banner' className={classes.heroImage} /> 
         <Box className={classes.box}>
             <div className={classes.box_content}>
                    <h1 className={classes.title}> BEN WORRALL </h1>
                    <h1 className={classes.subtitle}> Learning about life. Sharing the discoveries.</h1>
-                    <p className={classes.p}> I publish newsletters on a variety of topics including philosophy, psychology, art, creativity, and self-development.</p>
+                    <p className={classes.p}> I publish newsletters on a variety of topics, including philosophy, psychology, art, creativity, and self-development.</p>
                     <p className={classes.p}>Subscribe to get mind-expanding insights sent directly to your inbox every Sunday.</p>  
                     <form className={classes.form} onSubmit={submitHandler}>
                         <input className={classes.input} type="text" id="email" placeholder="your email" ref={emailInputRef}/>

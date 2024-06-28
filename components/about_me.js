@@ -30,7 +30,7 @@ const AboutMe = () => {
                  wisdom.  
                  </p>
                  <p className={classes.p}>
-                 I share in-depth philosophical insights in my weekly newsletter which provides guidance on self-exploration and personal development. 
+                 I share in-depth philosophical insights in my weekly newsletter, which provides guidance on self-exploration and personal development. 
                  I also plan to utilize my passion for storytelling to produce works of fiction which explore these life-changing ideas through 
                  engaging narrative experiences. 
                  </p>

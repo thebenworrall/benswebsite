@@ -5,7 +5,14 @@
   background-image: url('/images/ben_photography.jpg');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }  
+
+.heroImage {
+  width: 100%;
+  height: auto;
+  display: block; 
+}
 
 
 .box {
@@ -178,6 +185,10 @@
           flex-direction: column;
           min-height: 55vh;
           
+      }
+
+      .heroImage {
+        display: none; /* Hide the image below 820px */
       }
 
         .box {
