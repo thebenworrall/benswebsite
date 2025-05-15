@@ -42,3 +42,16 @@
   margin: 40px 0;
   font-weight: bold;
 }
+
+@media screen and ( max-width: 400px ) {
+  .emailInput {
+    width: 200px;
+    padding: 10px 14px;
+    font-size: 15px;
+  }
+
+  .subscribeButton {
+    padding: 10px 18px;
+    font-size: 15px;
+  }
+}
