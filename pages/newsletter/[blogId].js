@@ -13,6 +13,7 @@ import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import formatDate from '../../utils/formatDate'
+import SubscribeButton from '../../components/SubscribeButton'
 
 import classes from './blogId.module.css'
 
@@ -110,20 +111,49 @@ const BlogDetails = (props) => {
               return <a href={url}>{children}</a>;
             }
           },
-          [BLOCKS.PARAGRAPH]: (node, children) => {
-            const isQuote = node.content.some((contentNode) => {
-              return (
-                contentNode.nodeType === 'text' &&
-                contentNode.value.trim().startsWith('>')
-              );
-            });
+         [BLOCKS.PARAGRAPH]: (node, children) => {
+  const isQuote = node.content.some((contentNode) => {
+    return (
+      contentNode.nodeType === 'text' &&
+      contentNode.value.trim().startsWith('>') // Detecting quotes
+    );
+  });
 
-            if (isQuote) {
-              return <blockquote>{children}</blockquote>;
-            } else {
-              return <p>{children}</p>;
-            }
-          },
+  // Check for the <!-- subscribe --> marker and remove it from the content
+  const content = node.content[0]?.value; // Get paragraph text
+  const cleanedContent = content ? content.replace("<!-- subscribe -->", "") : content; // Remove the marker
+
+  if (content && content.includes("<!-- subscribe -->")) {
+    return (
+      <div>
+        <p>{cleanedContent}</p>  {/* Render the cleaned paragraph */}
+        <SubscribeButton />  {/* Insert the subscribe button */}
+      </div>
+    );
+  }
+
+  // If it's a quote, return it inside a blockquote
+  if (isQuote) {
+    return <blockquote>{children}</blockquote>;
+  } else {
+    // Otherwise, just return the paragraph normally
+    return <p>{children}</p>;
+  }
+},
+          // [BLOCKS.PARAGRAPH]: (node, children) => {
+          //   const isQuote = node.content.some((contentNode) => {
+          //     return (
+          //       contentNode.nodeType === 'text' &&
+          //       contentNode.value.trim().startsWith('>')
+          //     );
+          //   });
+
+          //   if (isQuote) {
+          //     return <blockquote>{children}</blockquote>;
+          //   } else {
+          //     return <p>{children}</p>;
+          //   }
+          // },
 
           [BLOCKS.UL_LIST]: (node, children) => (
             <UnorderedList>{children}</UnorderedList>
