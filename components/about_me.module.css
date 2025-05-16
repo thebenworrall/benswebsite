@@ -39,7 +39,7 @@
 
 .social {
 display: flex;
-margin-top: 90px;
+margin-top: 50px;
 flex-direction: row;
 justify-content: space-evenly;
 }

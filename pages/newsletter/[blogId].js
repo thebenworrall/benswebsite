@@ -252,7 +252,26 @@ const BlogDetails = (props) => {
         </div>
 
       </div>
-      <NewsletterSubscribe className={classes.newsletter_subscribe} />
+      {/* <NewsletterSubscribe className={classes.newsletter_subscribe} /> */}
+      <Box display={{ base: 'none', md: 'block' }}>
+  <NewsletterSubscribe className={classes.newsletter_subscribe} />
+</Box>
+<Box display={{ base: 'block', md: 'none' }} className={classes.mobileRelated} pb={10}>
+  <Heading textAlign="center" className={classes.headingWithLine} width="100%" >Related Posts</Heading>
+  <UnorderedList>
+    {relatedPosts.map(post => (
+      <List className={classes.sidebar_list} key={post.id}>
+        <Link href={`/newsletter/${post.id}`} passHref>
+          <Flex as="a" align="center" flexDirection="column">
+            <span className={classes.newsletterLinks}>{post.title}</span>
+            <Image src={post.mainImage} alt={`Image for ${post.title}`} className={classes.sidebar_image} />
+          </Flex>
+        </Link>
+      </List>
+    ))}
+  </UnorderedList>
+</Box>
+
     </>
   );
 

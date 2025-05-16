@@ -30,14 +30,14 @@ const NewsletterSubscribe = () => {
 <Flex className={classes.letter_signup} flexDirection={{ base: 'column', md: 'row' }} width="100%" height="auto" align="center" p={4}>
   {/* Logo Section */}
   <Box className={classes.logoWrapper}>
-    <Image src="images/aotm_logo.png" alt="Adventures of the Mind logo" className={classes.logo} />
+    <Image src="/images/aotm_logo.png" alt="Adventures of the Mind logo" className={classes.logo} />
   </Box>
 
   {/* Text + Form Section */}
   <Box className={classes.contentWrapper}>
     <h1 className={classes.h1}>Adventures of the Mind</h1>
     <p className={classes.p}>
-      Join hundreds of curious minds following my work. You'll be the first to read new essays and stories as they're released.
+      Join hundreds of curious minds following the <i>Adventures of the Mind</i> newsletter. You'll be the first to read new essays and stories as they're released.
     </p>
     <form className={classes.form} onSubmit={submitHandler}>
       <input className={classes.input} ref={emailInputRef} placeholder="your email" />

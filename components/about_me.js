@@ -24,13 +24,13 @@ const AboutMe = () => {
                 <h1 className={classes.h1}> Hey, I'm Ben!</h1>
                 <h2 className={classes.h2}> Let me tell you a little more about myself.</h2>
                 <p className={classes.p}>
-                  I'm a British writer and teacher currently based in Taipei, Taiwan. I've dedicated the past decade to deepening my understanding of life.
+                  I'm a British writer and teacher based in Taipei, Taiwan who's spent the past decade exploring the depths of human understanding.
                  </p>
-                <p className={classes.p}>Having read over 150 books on philosophy, psychology, and spirituality, I've been inspired by wisdom teachings from across human history. I believe humanity is still in its infancy—and that our potential is limitless. But to take the next step in our evolution, we need to turn inward. This means developing a deeper understanding of the human mind, consciousness, and our place in the universe. It means staying open to the legitimacy of ideas across time and cultures. It means creating new, inclusive maps to help individuals navigate the mysterious waters in which we swim.</p>
-                 <p className={classes.p}>My role is simple: I’m committed to reaching ever higher levels of wisdom and sharing these understandings through my art—thought-provoking essays, fiction, and multimedia experiences. My aim is to create stories that are both entertaining and insightful, that hook you and transform you.</p>
+                <p className={classes.p}> My journey through philosophy, psychology, and spirituality has convinced me that humanity's potential remains largely untapped. To evolve further, we must look inward—developing deeper insights into consciousness and our place in the universe while remaining open to wisdom across cultures and eras.</p>
+                <p className={classes.p}> I share these explorations through essays, fiction, and multimedia that aim to both entertain and transform. My work creates bridges between ancient wisdom and modern challenges, offering new maps for navigating life's complexities. </p>
                  <p className={classes.p}>
-                 If this sounds interesting, I’d love for you to follow along on my journey. You can keep up with my work by joining the <i>Adventures of the Mind</i> newsletter, where I release free essays and stories almost every week.
-                 </p>
+                 Join my <i>Adventures of the Mind</i> newsletter, for weekly essays and stories that invite you to explore alongside me.
+                </p>
             </Box>
         </Box>
     </Box>
