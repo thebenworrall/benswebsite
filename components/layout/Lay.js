@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Header from "./Header"
 import Footer from "./Footer"
+import ErrorBoundary from '../ErrorBoundary'
 
 
 
@@ -16,7 +17,11 @@ const Lay = (props) => {
             {/* You can add more meta tags or links like favicon here */}
         </Head>
         <Header />
-            <main>{props.children}</main>
+            <main>
+                <ErrorBoundary>
+                    {props.children}
+                </ErrorBoundary>
+            </main>
         <Footer />
         </div>
     )

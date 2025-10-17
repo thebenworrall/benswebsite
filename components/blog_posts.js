@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import formatTagId from '../utils/format_tag_id';
 
-const BlogPosts = ({ posts, filter }) => {
+const BlogPosts = ({ posts, filter, showEssays, showFiction }) => {
     const postMatchesFilter = (post) => {
         const normalizedFilter = filter.trim().toLowerCase();
         const titleMatch = post.title.toLowerCase().includes(normalizedFilter);
@@ -15,7 +15,23 @@ const BlogPosts = ({ posts, filter }) => {
         return titleMatch || tagsMatch;
     };
 
-    const filteredPosts = Array.isArray(posts) ? posts.filter(postMatchesFilter) : [];
+    const postMatchesContentType = (post) => {
+        const hasFictionTag = Array.isArray(post.tags) && post.tags.some(tag => 
+            tag.sys && typeof tag.sys.id === 'string' && formatTagId(tag.sys.id).toLowerCase() === 'fiction'
+        );
+        
+        // If it has fiction tag, show only if fiction is enabled
+        if (hasFictionTag) {
+            return showFiction;
+        }
+        
+        // If it doesn't have fiction tag, it's an essay - show only if essays are enabled
+        return showEssays;
+    };
+
+    const filteredPosts = Array.isArray(posts) ? posts.filter(post => 
+        postMatchesFilter(post) && postMatchesContentType(post)
+    ) : [];
 
     const Posts = filteredPosts.map((post) => {
         const imageUrl = post.mainImage.startsWith('//') ? 'https:' + post.mainImage : post.mainImage;

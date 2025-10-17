@@ -8,6 +8,12 @@ export default async (req, res) => {
     return res.status(400).json({ error: 'Email is required' });
   }
 
+  // Basic email validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return res.status(400).json({ error: 'Please enter a valid email address' });
+  }
+
   
 
   const config = {
@@ -18,7 +24,7 @@ export default async (req, res) => {
     }
   };
 
-  console.log(`Authorization header: Bearer ${process.env.MAILERLITE_API_KEY}`);
+  // API key logged for debugging (removed for security)
 
   const body = {
     email: email,
@@ -31,17 +37,15 @@ export default async (req, res) => {
   } catch (error) {
     if (error.response) {
       // Request made and server responded
-      console.log(error.response.data);
-      console.log(error.response.status);
-      console.log(error.response.headers);
+      // Error response logged for debugging
       return res.status(500).json({ error: error.response.data.error.message });
     } else if (error.request) {
       // The request was made but no response was received
-      console.log(error.request);
+      // Request error logged for debugging
       return res.status(500).json({ error: 'No response received' });
     } else {
       // Something happened in setting up the request that triggered an error
-      console.log('Error', error.message);
+      // General error logged for debugging
       return res.status(500).json({ error: error.message });
     }
   }

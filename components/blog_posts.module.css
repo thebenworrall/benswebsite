@@ -43,22 +43,26 @@
     overflow: hidden;
     border-radius: 25px;
     position: relative; /* For Next.js Image component */
-    align-self: start;  
-   
-    
-    
+    align-self: start;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.imageWrapper image {
-    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+.imageWrapper img {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     object-fit: fill; 
     width: 100%; 
     height: 100%; 
     border-radius: 25px;
 }
 
+.imageWrapper:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
 .imageWrapper:hover img {
-    transform: scale(1.02); /* subtle zoom effect */
+    transform: scale(1.05);
 }
 
 .tagContainer {

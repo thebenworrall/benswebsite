@@ -16,20 +16,20 @@ const AboutMe = () => {
                 <img className={classes.img} src="/images/ben_main.jpg" alt="Ben Worrall" height="900" width="900"></img>
                 <Box className={classes.social}>
                 <SocialIcon url="https://twitter.com/thebenworrall" />
-                <SocialIcon url="https://instagram.com/thebenworrall" />
-                <SocialIcon url="https://youtube.com/benworrall" />
+                <SocialIcon url="https://instagram.com/themindadventures" />
+                <SocialIcon url="https://youtube.com/themindadventures" />
                 </Box>
             </Box>
             <Box className={classes.description}>
                 <h1 className={classes.h1}> Hey, I'm Ben!</h1>
                 <h2 className={classes.h2}> Let me tell you a little more about myself.</h2>
                 <p className={classes.p}>
-                  I'm a British writer and teacher based in Taipei, Taiwan who's spent the past decade exploring the depths of human understanding.
+                  I'm a British writer and teacher based in Taipei, Taiwan. My work explores creativity and consciousness through transformative essays, fiction, and visual storytelling.
                  </p>
-                <p className={classes.p}> My journey through philosophy, psychology, and spirituality has convinced me that humanity's potential remains largely untapped. To evolve further, we must look inward—developing deeper insights into consciousness and our place in the universe while remaining open to wisdom across cultures and eras.</p>
-                <p className={classes.p}> I share these explorations through essays, fiction, and multimedia that aim to both entertain and transform. My work creates bridges between ancient wisdom and modern challenges, offering new maps for navigating life's complexities. </p>
+                <p className={classes.p}> I've spent the last decade deep diving into a wide range of philosophical ideas. My research has convinced me that we must look inward—developing deeper insights into the human mind while remaining open to wisdom across cultures and eras.</p>
+                  <p className={classes.p}> Alongside writing, I run <a href="http://mindadventures.net" target="_blank" rel="noopener noreferrer" style={{color: 'rgb(158, 64, 64)'}}>Adventures of the Mind</a>, a creative studio dedicated to AI filmmaking and the future of storytelling.</p>
                  <p className={classes.p}>
-                 Join my <i>Adventures of the Mind</i> newsletter, for weekly essays and stories that invite you to explore alongside me.
+                 You can also follow my latest work through my newsletter, with new essays and stories each week.
                 </p>
             </Box>
         </Box>

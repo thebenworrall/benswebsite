@@ -35,8 +35,22 @@ const BlogDetails = (props) => {
 
   const [contentComponents, setContentComponents] = useState(null);
   const [relatedPosts, setRelatedPosts] = useState([])
+  const [readingProgress, setReadingProgress] = useState(0)
 
 
+
+  // Reading progress effect
+  useEffect(() => {
+    const updateReadingProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      setReadingProgress(scrollPercent);
+    };
+
+    window.addEventListener('scroll', updateReadingProgress);
+    return () => window.removeEventListener('scroll', updateReadingProgress);
+  }, []);
 
   useEffect(() => {
     if (currentPost.content) {
@@ -200,6 +214,11 @@ const BlogDetails = (props) => {
         <meta name="description" content={currentPost.teaser} />
       </Head>
 
+      {/* Reading Progress Bar */}
+      <div 
+        className={classes.readingProgress} 
+        style={{ width: `${readingProgress}%` }}
+      />
       
       <div className={classes.blogPageContent}>
 

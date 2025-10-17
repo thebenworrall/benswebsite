@@ -11,6 +11,8 @@ import getPosts from '../../pages/api/getPosts';
 const NewsletterPage = ({ posts }) => {
     const [filter, setFilter] = useState('');
     const [tags, setTags] = useState([]);
+    const [showEssays, setShowEssays] = useState(true);
+    const [showFiction, setShowFiction] = useState(true);
 
     useEffect(() => {
        
@@ -30,9 +32,22 @@ const NewsletterPage = ({ posts }) => {
             </Head>
             <Flex className={classes.container} flexDirection="column">
                 <NewsletterSubscribe />
-                <PostsFilter onSearchChange={setFilter} tags={tags} />
+                <PostsFilter 
+                    onSearchChange={setFilter} 
+                    tags={tags} 
+                    posts={posts}
+                    showEssays={showEssays}
+                    setShowEssays={setShowEssays}
+                    showFiction={showFiction}
+                    setShowFiction={setShowFiction}
+                />
                 <Flex className={classes.posts_container}> 
-                    <BlogPosts posts={posts} filter={filter} />
+                    <BlogPosts 
+                        posts={posts} 
+                        filter={filter} 
+                        showEssays={showEssays}
+                        showFiction={showFiction}
+                    />
                 </Flex>
             </Flex>
         </>

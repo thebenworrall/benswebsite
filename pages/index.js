@@ -16,7 +16,7 @@ const HomePage = (props) => {
     <Head>
     <title> Ben Worrall | Learning about life. Sharing the discoveries.  </title>
     <meta name="description" content="An exploration of life's biggest questions through creative storytelling and powerful insights." />
-        <link rel="preload" href="/public/images/ben_photography.jpg" as="image" />
+        <link rel="preload" href="/images/ben_photography.jpg" as="image" />
     </Head>
     <div className ={classes.container}>
         <HeroBanner />
@@ -28,12 +28,8 @@ const HomePage = (props) => {
 }
 
 export async function getStaticProps() {
-
-    
-   
-    const { getBlogPosts } = getPosts();
-    const blogPosts = await getBlogPosts();
-
+    const { getBlogPostSummaries } = getPosts();
+    const blogPosts = await getBlogPostSummaries();
 
     return {
         props: { posts: blogPosts }

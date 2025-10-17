@@ -7,26 +7,26 @@ const generateRssFeed = async (posts) => {
   const feed = new Feed({
     title: "Ben Worrall's Newsletter Feed",
     description: "Stay up to date with my latest insights and news.",
-    id: "http://benworrall.com",
-    link: "http://benworrall.com",
+    id: "https://benworrall.com",
+    link: "https://benworrall.com",
     language: "en",
-    image: "http://localhost:3000/logo.png",
-    favicon: "http://localhost:3000/favicon.png",
+    image: "https://benworrall.com/images/ben_logo.png",
+    favicon: "https://benworrall.com/favicon.ico",
     author: {
       name: "Ben Worrall",
-      email: "ben@example.com",
-      link: "http://benworrall.com",
+      email: "ben@benworrall.com",
+      link: "https://benworrall.com",
     },
   });
 
 
   posts.forEach((post) => {
 
-    const postUrl = `http://benworrall.com/newsletter/${post.id}`
+    const postUrl = `https://benworrall.com/newsletter/${post.id}`
 
     const htmlContent = documentToHtmlString(post.content);
 
-    const mainImageUrl = `http:${post.mainImage}`
+    const mainImageUrl = `https:${post.mainImage}`
 
 
     const htmlWithImage = `<img src="${mainImageUrl}" alt="${post.title}">${htmlContent}`
@@ -67,7 +67,7 @@ export async function getServerSideProps({ res }) {
 
   const rss = await generateRssFeed(posts);
 
-  console.log(posts)
+  // Posts fetched for RSS generation
 
   res.setHeader("Content-Type", "text/xml");
   res.write(rss);

@@ -19,7 +19,7 @@ const RecentPosts = (props) => {
         return (
             
                 <div key={post.id}  className={classes.post_container}>
-                        <a href={'/newsletter/' + post.id}><Image className={classes.image} src={post.mainImage}/></a>
+                        <Link href={'/newsletter/' + post.id}><Image className={classes.image} src={post.mainImage}/></Link>
                         <Link href={'/newsletter/' + post.id}><h1 className={classes.title}>{post.title}</h1></Link>
                 </div>
                 

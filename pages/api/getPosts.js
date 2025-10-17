@@ -47,7 +47,6 @@ const getBlogPosts = async () => {
     return sanitizedBlogPosts
 
   } catch (error) {
-    console.log(`Error fetching blog posts ${error}`)
     return []
   }
 }
@@ -77,9 +76,66 @@ const getBlogPosts = async () => {
 // };
 
 
+// NEW OPTIMIZED FUNCTIONS
+
+const getBlogPostSummaries = async () => {
+  try {
+    const blogPosts = await client.getEntries({
+      content_type: 'blogPost', 
+      select: 'fields.id,fields.date,fields.mainTitle,fields.teaser,fields.mainImage,metadata.tags', 
+      order: 'fields.date'
+    })
+
+    const sanitizedBlogPosts = blogPosts.items.map( post => {
+      const blogPost = {
+        id: post.fields.id,
+        date: post.fields.date,
+        title: post.fields.mainTitle, 
+        teaser: post.fields.teaser,
+        mainImage: post.fields.mainImage.fields.file.url, 
+        tags: post.metadata.tags,
+        key: post.fields.id
+      }
+      return blogPost 
+    })
+
+    return sanitizedBlogPosts
+  } catch (error) {
+    return []
+  }
+}
+
+const getBlogPostById = async (postId) => {
+  try {
+    const blogPosts = await client.getEntries({
+      content_type: 'blogPost', 
+      select: 'fields, metadata.tags', 
+      'fields.id': postId
+    })
+
+    if (blogPosts.items.length === 0) return null
+
+    const post = blogPosts.items[0]
+    const blogPost = {
+      id: post.fields.id,
+      date: post.fields.date,
+      title: post.fields.mainTitle, 
+      teaser: post.fields.teaser,
+      content: post.fields.blogContent,
+      mainImage: post.fields.mainImage.fields.file.url, 
+      tags: post.metadata.tags,
+      key: post.fields.id
+    }
+
+    return blogPost
+  } catch (error) {
+    return null
+  }
+}
+
 //RETURNING 
 
-return { getBlogPosts };
+return { getBlogPosts, getBlogPostSummaries, getBlogPostById };
 
 }
 
