@@ -19,7 +19,18 @@ const RecentPosts = (props) => {
         return (
             
                 <div key={post.id}  className={classes.post_container}>
-                        <Link href={'/newsletter/' + post.id}><Image className={classes.image} src={post.mainImage}/></Link>
+                        <Link href={'/newsletter/' + post.id}>
+                            <Image 
+                                className={classes.image} 
+                                src={post.mainImage}
+                                alt={post.title}
+                                width={320}
+                                height={192}
+                                loading="lazy"
+                                placeholder="blur"
+                                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                            />
+                        </Link>
                         <Link href={'/newsletter/' + post.id}><h1 className={classes.title}>{post.title}</h1></Link>
                 </div>
                 
