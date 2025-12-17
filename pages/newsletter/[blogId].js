@@ -108,18 +108,22 @@ const BlogDetails = (props) => {
                 </Link>
               );
             } else if (url.includes("player.vimeo.com/video")) {
-              return <iframe title="Vimeo Video" src={url} frameBorder="0" allowFullScreen />;
+              return (
+                <div className={classes.videoWrapper}>
+                  <iframe title="Vimeo Video" src={url} frameBorder="0" allowFullScreen />
+                </div>
+              );
             } else if (url.includes("youtube.com/embed")) {
               return (
-                <iframe
-                  title="YouTube Video"
-                  src={url}
-                  width="700"
-                  height="400"
-                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-                  frameBorder="0"
-                  allowFullScreen
-                />
+                <div className={classes.videoWrapper}>
+                  <iframe
+                    title="YouTube Video"
+                    src={url}
+                    allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                    frameBorder="0"
+                    allowFullScreen
+                  />
+                </div>
               );
             } else {
               return <a href={url}>{children}</a>;
