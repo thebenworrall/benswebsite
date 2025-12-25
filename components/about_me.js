@@ -27,7 +27,6 @@ const AboutMe = () => {
                   I'm a British writer and teacher based in Taipei, Taiwan. My work explores creativity and consciousness through transformative essays, fiction, and visual storytelling.
                  </p>
                 <p className={classes.p}> I've spent the last decade deep diving into a wide range of philosophical ideas. My research has convinced me that we must look inward—developing deeper insights into the human mind while remaining open to wisdom across cultures and eras.</p>
-                  <p className={classes.p}> Alongside writing, I run <a href="http://mindadventures.net" target="_blank" rel="noopener noreferrer" style={{color: 'rgb(158, 64, 64)'}}>Adventures of the Mind</a>, a creative studio dedicated to AI filmmaking and the future of storytelling.</p>
                  <p className={classes.p}>
                  You can also follow my latest work through my newsletter, with new essays and stories each week.
                 </p>

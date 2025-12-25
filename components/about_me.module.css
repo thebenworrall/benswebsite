@@ -20,6 +20,7 @@
     margin: 10px;
     display: flex;
     flex-direction: row;
+    align-items: center;
     
 }
 
@@ -45,7 +46,7 @@ justify-content: space-evenly;
 }
 
 .description {
-  padding: 130px 40px;
+  padding: 30px 40px 40px 40px;
   height: 100%;
   max-width: none;
   flex-direction: column;
